@@ -1,0 +1,14 @@
+{
+  "session_count": 2,
+  "last_updated": "2026-06-17T17:06:36.694603Z",
+  "active_session": {
+    "skill": "writing",
+    "history": [
+      {
+        "role": "user",
+        "content": "write a poem about space"
+      }
+    ]
+  },
+  "confidence_threshold": 0.85
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2026-06-17T17:06:12.661670Z",
+    "message": "search the web for the current stock price of Google",
+    "detected_intent": "Web Research",
+    "confidence": 0.95,
+    "chosen_skill": "research",
+    "override": false
+  },
+  {
+    "timestamp": "2026-06-17T17:06:24.733262Z",
+    "message": "another message",
+    "detected_intent": "Web Research",
+    "confidence": 0.9,
+    "chosen_skill": "research",
+    "override": false
+  }
+]

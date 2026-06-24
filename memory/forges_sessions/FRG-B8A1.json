@@ -1,0 +1,48 @@
+{
+  "session_code": "FRG-B8A1",
+  "timestamp": "2026-06-22T13:25:00-04:00",
+  "business_profile": {
+    "name": "Bishop AI",
+    "description": "Premium AI automation and education agency founded by Richmond Taylor, delivering authoritative, high-end systems and GTM solutions.",
+    "audience": "Founders and revenue leaders at B2B companies ($1M-$50M revenue) and ops professionals wanting custom training.",
+    "cta": "Book a Meeting",
+    "logo_ref": "outputs/bishop_ai_logo.png",
+    "colors": {
+      "primary": "#E8B84B",
+      "secondary": "#1BA8C8",
+      "accent": "#C49528",
+      "text": "#EDE9E2",
+      "bg": "#000D1A"
+    },
+    "fonts": {
+      "heading": "Poppins",
+      "body": "Open Sans"
+    },
+    "analytics": "Google Analytics",
+    "contact_fields": ["name", "email", "company", "revenue", "message"],
+    "pages_limit": 10,
+    "sections_limit": 8
+  },
+  "current_build": {
+    "pages": [
+      { "filename": "index.html", "title": "Homepage", "sections": ["header", "hero", "problem", "method", "tools", "proof", "booking", "footer"] },
+      { "filename": "services.html", "title": "Services", "sections": ["header", "intro", "automation", "training", "consulting", "booking", "footer"] },
+      { "filename": "about.html", "title": "About", "sections": ["header", "story", "bio", "stack", "cta", "footer"] },
+      { "filename": "cases.html", "title": "Case Studies", "sections": ["header", "grid", "cta", "footer"] },
+      { "filename": "blog.html", "title": "Blog", "sections": ["header", "featured-report", "categories", "grid", "footer"] },
+      { "filename": "partners.html", "title": "Partners & Tools", "sections": ["header", "intro", "grid", "referral", "footer"] },
+      { "filename": "faq.html", "title": "FAQ", "sections": ["header", "faq-list", "cta", "footer"] },
+      { "filename": "contact.html", "title": "Contact", "sections": ["header", "contact-split", "footer"] },
+      { "filename": "legal.html", "title": "Legal", "sections": ["header", "legal-content", "footer"] }
+    ],
+    "revision_index": 0
+  },
+  "revision_history": [
+    {
+      "revision_id": 0,
+      "description": "Initial website build",
+      "timestamp": "2026-06-22T13:25:00-04:00",
+      "snapshot_files": {}
+    }
+  ]
+}

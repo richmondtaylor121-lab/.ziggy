@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coca-Cola Brand Kit — BKB-CC01</title>
+  <meta name="description" content="Official mock brand guidelines for Coca-Cola. Covering logo direction, typography, colour palette, tone of voice, brand values, and visual guidelines." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red:         #F40009;
+      --red-dark:    #C00005;
+      --red-deep:    #8B0003;
+      --white:       #FFFFFF;
+      --black:       #1A1A1A;
+      --midnight:    #0D0D0D;
+      --cream:       #FFF8F0;
+      --stone:       #8C8C8C;
+      --surface:     #F9F4EE;
+      --border:      #E8E0D8;
+      --ff-display:  'Playfair Display', Georgia, serif;
+      --ff-body:     'Inter', system-ui, sans-serif;
+      --radius-sm:   6px;
+      --radius-md:   12px;
+      --radius-lg:   24px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md:   0 8px 32px rgba(0,0,0,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: var(--ff-display); line-height: 1.2; }
+    .label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 0; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--midnight);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px; max-width: 1120px; margin: 0 auto; padding: 0 2rem;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+    .nav-brand span { font-weight: 600; font-size: 0.875rem; color: var(--white); letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-badge {
+      font-size: 0.6875rem; font-weight: 600;
+      background: rgba(244,0,9,0.18); color: #FF6B70;
+      border: 1px solid rgba(244,0,9,0.3); border-radius: 100px; padding: 3px 10px;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--red); min-height: 92vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding: 6rem 0;
+    }
+    .hero-wave {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none; opacity: 0.12;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 2rem;
+    }
+    .hero-eyebrow span { font-size: 0.6875rem; font-weight: 600; color: rgba(255,255,255,0.9); letter-spacing: 0.14em; text-transform: uppercase; }
+    .hero h1 {
+      font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 900; color: var(--white);
+      line-height: 0.95; margin-bottom: 1.5rem; letter-spacing: -0.02em;
+    }
+    .hero h1 em { font-style: italic; display: block; color: rgba(255,255,255,0.72); }
+    .hero-sub { font-size: 1.125rem; color: rgba(255,255,255,0.78); max-width: 520px; line-height: 1.7; margin-bottom: 3rem; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .hero-stat { border-left: 2px solid rgba(255,255,255,0.25); padding-left: 1rem; }
+    .hero-stat-value { font-family: var(--ff-display); font-size: 2rem; font-weight: 700; color: var(--white); line-height: 1; }
+    .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 2px; letter-spacing: 0.04em; }
+    .hero-bottle { position: absolute; right: 6%; bottom: 0; width: clamp(180px, 22vw, 340px); opacity: 0.18; pointer-events: none; }
+
+    /* SECTION HEADERS */
+    .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 3rem; gap: 1rem; flex-wrap: wrap;
+      border-bottom: 1px solid var(--border); padding-bottom: 1.5rem;
+    }
+    .section-header-left .label { margin-bottom: 0.5rem; }
+    .section-header h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; color: var(--black); }
+    .section-header h2 span { color: var(--red); }
+
+    /* LOGO */
+    #logo { background: var(--surface); }
+    .logo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+    .logo-card { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .logo-swatch {
+      height: 200px; display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display); font-style: italic;
+      font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.01em;
+    }
+    .logo-swatch.on-red   { background: var(--red);      color: var(--white); }
+    .logo-swatch.on-white { background: var(--white);    color: var(--red); border: 1px solid var(--border); }
+    .logo-swatch.on-dark  { background: var(--midnight); color: var(--white); }
+    .logo-card-info { padding: 1rem 1.25rem; background: var(--white); }
+    .logo-card-title { font-weight: 600; font-size: 0.875rem; color: var(--black); margin-bottom: 2px; }
+    .logo-card-desc  { font-size: 0.75rem; color: var(--stone); }
+    .logo-rules { margin-top: 2rem; background: var(--white); border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--border); }
+    .logo-rules h3 { font-family: var(--ff-body); font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: var(--black); }
+    .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .rule-item { display: flex; gap: 0.75rem; align-items: flex-start; }
+    .rule-icon {
+      width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+    .rule-icon.do   { background: #D4EDDA; color: #1A6633; }
+    .rule-icon.dont { background: #F8D7DA; color: #8B0000; }
+    .rule-text { font-size: 0.8125rem; color: var(--black); line-height: 1.5; }
+
+    /* FONTS */
+    #fonts { background: var(--white); }
+    .fonts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    .font-card {
+      background: var(--cream); border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 2.5rem; position: relative; overflow: hidden;
+    }
+    .font-card::after { content: ''; position: absolute; top: 0; right: 0; width: 4px; height: 100%; background: var(--red); }
+    .font-role { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.5rem; }
+    .font-name { font-size: 0.875rem; font-weight: 600; color: var(--red); margin-bottom: 1.5rem; }
+    .font-sample-display { font-family: var(--ff-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1; color: var(--black); margin-bottom: 1rem; }
+    .font-weights { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .weight-sample { font-family: var(--ff-display); font-size: 1.125rem; color: var(--black); }
+    .weight-label { font-size: 0.6875rem; color: var(--stone); margin-top: 2px; }
+    .type-scale { background: var(--cream); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 2.5rem; }
+    .type-scale-title { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); margin-bottom: 2rem; }
+    .scale-row { display: flex; align-items: baseline; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .scale-row:last-child { border-bottom: none; }
+    .scale-meta { flex-shrink: 0; width: 110px; }
+    .scale-name { font-size: 0.6875rem; font-weight: 600; color: var(--stone); }
+    .scale-size { font-size: 0.625rem; color: var(--stone); opacity: 0.7; }
+
+    /* COLOURS */
+    #colours { background: var(--surface); }
+    .palette-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1rem; }
+    .swatch-card { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s; }
+    .swatch-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .swatch-block { height: 160px; width: 100%; }
+    .swatch-info { padding: 0.875rem 1rem; background: var(--white); }
+    .swatch-name { font-weight: 600; font-size: 0.75rem; color: var(--black); margin-bottom: 2px; }
+    .swatch-hex  { font-family: 'Courier New', monospace; font-size: 0.7rem; color: var(--stone); }
+    .swatch-role { font-size: 0.625rem; color: var(--stone); margin-top: 4px; font-style: italic; }
+    .colour-theory {
+      margin-top: 2rem; background: var(--midnight); border-radius: var(--radius-md); padding: 2.5rem;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;
+    }
+    .theory-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
+    .theory-text  { font-size: 0.875rem; color: rgba(255,255,255,0.72); line-height: 1.6; }
+
+    /* VIBE */
+    #vibe { background: var(--white); }
+    .vibe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .vibe-card { border-radius: var(--radius-md); padding: 2.5rem; border: 1px solid var(--border); position: relative; overflow: hidden; }
+    .vibe-card.primary   { background: var(--red); border-color: transparent; color: var(--white); }
+    .vibe-card.secondary { background: var(--cream); }
+    .vibe-card-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .vibe-card.primary .vibe-card-label   { color: rgba(255,255,255,0.65); }
+    .vibe-card.secondary .vibe-card-label { color: var(--stone); }
+    .vibe-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .vibe-tag { padding: 6px 14px; border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+    .vibe-card.primary .vibe-tag   { background: rgba(255,255,255,0.18); color: var(--white); border: 1px solid rgba(255,255,255,0.25); }
+    .vibe-card.secondary .vibe-tag { background: var(--white); color: var(--black); border: 1px solid var(--border); }
+    .vibe-statement { font-family: var(--ff-display); font-style: italic; font-size: 1.125rem; line-height: 1.5; }
+    .vibe-card.primary .vibe-statement   { color: rgba(255,255,255,0.9); }
+    .vibe-card.secondary .vibe-statement { color: var(--black); }
+    .tone-example { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.875rem; font-style: italic; color: var(--stone); }
+    .voice-chars { grid-column: 1 / -1; background: var(--cream); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 2.5rem; }
+    .voice-chars-title { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); margin-bottom: 2rem; }
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .voice-item-label { font-size: 0.75rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.35rem; }
+    .voice-item-text  { font-size: 0.9rem; color: var(--black); line-height: 1.6; }
+
+    /* GUIDELINES */
+    #guidelines { background: var(--surface); }
+    .guidelines-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .guideline-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 2rem; }
+    .guideline-icon { width: 40px; height: 40px; background: #FDECEA; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.125rem; }
+    .guideline-card h3 { font-family: var(--ff-body); font-size: 0.9375rem; font-weight: 700; color: var(--black); margin-bottom: 0.75rem; }
+    .guideline-card p  { font-size: 0.875rem; color: var(--black); line-height: 1.65; }
+
+    /* VALUES */
+    #values { background: var(--midnight); }
+    #values .section-header h2 { color: var(--white); }
+    #values .section-header h2 span { color: var(--red); }
+    #values .label { color: rgba(255,255,255,0.4); }
+    #values .section-header { border-bottom-color: rgba(255,255,255,0.1); }
+    .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border-radius: var(--radius-md); overflow: hidden; }
+    .value-card { background: var(--midnight); padding: 3rem; position: relative; overflow: hidden; transition: background 0.3s; }
+    .value-card:hover { background: #141414; }
+    .value-number { font-family: var(--ff-display); font-size: 4rem; font-weight: 900; color: rgba(244,0,9,0.12); line-height: 1; margin-bottom: 1rem; display: block; }
+    .value-phrase  { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .value-explanation { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.65; max-width: 320px; }
+    .value-accent { position: absolute; bottom: 0; left: 0; height: 3px; width: 0; background: var(--red); transition: width 0.4s ease; }
+    .value-card:hover .value-accent { width: 100%; }
+
+    /* INTRODUCTION */
+    #introduction { background: var(--red); }
+    .intro-wrap { max-width: 800px; margin: 0 auto; text-align: center; }
+    #introduction .label { color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; display: block; }
+    .intro-quote { font-family: var(--ff-display); font-size: clamp(1.25rem, 3vw, 1.875rem); font-style: italic; font-weight: 700; color: var(--white); line-height: 1.55; margin-bottom: 2.5rem; }
+    .intro-divider { width: 48px; height: 3px; background: rgba(255,255,255,0.4); border-radius: 2px; margin: 0 auto 2.5rem; }
+    .intro-body { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.8; }
+
+    /* FOOTER */
+    footer { background: var(--midnight); padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: 1120px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-brand { font-family: var(--ff-display); font-style: italic; font-size: 1.25rem; font-weight: 700; color: var(--white); }
+    .footer-brand span { color: var(--red); }
+    .footer-meta    { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+    .footer-session { font-family: 'Courier New', monospace; font-size: 0.6875rem; color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .logo-grid { grid-template-columns: 1fr 1fr; }
+      .palette-grid { grid-template-columns: repeat(4, 1fr); }
+      .fonts-grid { grid-template-columns: 1fr; }
+      .rules-grid { grid-template-columns: 1fr; }
+      .colour-theory { grid-template-columns: 1fr; }
+      .vibe-grid { grid-template-columns: 1fr; }
+      .voice-grid { grid-template-columns: 1fr; }
+      .guidelines-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .logo-grid { grid-template-columns: 1fr; }
+      .palette-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero h1 { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-dot"></div>
+        <span>Coca-Cola Brand Kit</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#logo">Logo</a></li>
+        <li><a href="#fonts">Fonts</a></li>
+        <li><a href="#colours">Colours</a></li>
+        <li><a href="#vibe">Voice</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#introduction">About</a></li>
+      </ul>
+      <span class="nav-badge">BKB-CC01</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <svg class="hero-wave" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <path d="M-100 600 Q 200 300 500 500 Q 800 700 1100 400 Q 1300 200 1600 350" stroke="white" stroke-width="120" fill="none" stroke-linecap="round"/>
+      <path d="M-100 750 Q 300 500 600 650 Q 900 800 1200 550 Q 1380 420 1600 500" stroke="white" stroke-width="60" fill="none" stroke-linecap="round"/>
+      <path d="M300 -50 Q 500 200 400 450 Q 300 700 450 900" stroke="white" stroke-width="80" fill="none" stroke-linecap="round"/>
+    </svg>
+    <svg class="hero-bottle" viewBox="0 0 200 520" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M80 0 L120 0 L125 40 Q160 80 165 160 Q170 220 160 260 Q175 290 178 340 Q185 420 170 480 Q158 520 140 520 L60 520 Q42 520 30 480 Q15 420 22 340 Q25 290 40 260 Q30 220 35 160 Q40 80 75 40 Z"/>
+    </svg>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="nav-dot"></div>
+        <span>Official Brand Guidelines · Mock Document</span>
+      </div>
+      <h1>Coca-Cola<em>Brand Kit</em></h1>
+      <p class="hero-sub">A comprehensive visual identity system capturing the heritage, energy, and universal joy that Coca-Cola has embodied for over a century.</p>
+      <div class="hero-meta">
+        <div class="hero-stat">
+          <div class="hero-stat-value">1886</div>
+          <div class="hero-stat-label">Founded</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">200+</div>
+          <div class="hero-stat-label">Countries</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">#1</div>
+          <div class="hero-stat-label">Most recognised brand</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">2B</div>
+          <div class="hero-stat-label">Daily servings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section id="logo">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">01 — Logo System</p>
+          <h2>The <span>Mark</span></h2>
+        </div>
+        <p style="font-size:0.875rem;color:var(--stone);max-width:320px;">The Coca-Cola wordmark is a Spencerian script — one of the world's most recognised pieces of lettering. Handle it with care.</p>
+      </div>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="logo-swatch on-red">Coca-Cola</div>
+          <div class="logo-card-info">
+            <p class="logo-card-title">Primary — White on Red</p>
+            <p class="logo-card-desc">The canonical lockup. Use in all primary brand contexts.</p>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-swatch on-white">Coca-Cola</div>
+          <div class="logo-card-info">
+            <p class="logo-card-title">Reverse — Red on White</p>
+            <p class="logo-card-desc">For light backgrounds and print applications.</p>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-swatch on-dark">Coca-Cola</div>
+          <div class="logo-card-info">
+            <p class="logo-card-title">Dark — White on Midnight</p>
+            <p class="logo-card-desc">For dark-themed digital environments only.</p>
+          </div>
+        </div>
+      </div>
+      <div class="logo-rules">
+        <h3>Logo Usage Rules</h3>
+        <div class="rules-grid">
+          <div class="rule-item">
+            <div class="rule-icon do">✓</div>
+            <p class="rule-text">Maintain clear space equal to the cap-height of the "C" on all four sides.</p>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon do">✓</div>
+            <p class="rule-text">Use only on approved backgrounds: Coca-Cola Red, Pure White, or Midnight.</p>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon dont">✕</div>
+            <p class="rule-text">Never stretch, compress, rotate, or distort the wordmark in any direction.</p>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon dont">✕</div>
+            <p class="rule-text">Never recolour the wordmark, add drop shadows, outlines, or effects.</p>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon dont">✕</div>
+            <p class="rule-text">Never place the logo on busy photography without a colour field backing.</p>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon do">✓</div>
+            <p class="rule-text">Scale proportionally. Never reproduce below 80px wide in digital contexts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONTS -->
+  <section id="fonts">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">02 — Typography</p>
+          <h2>Font <span>Pairings</span></h2>
+        </div>
+        <p style="font-size:0.875rem;color:var(--stone);max-width:360px;">Playfair Display brings editorial gravitas to headlines. Inter keeps body copy clean, legible, and modern.</p>
+      </div>
+      <div class="fonts-grid">
+        <div class="font-card">
+          <p class="font-role">Primary — Display &amp; Headlines</p>
+          <p class="font-name">Playfair Display</p>
+          <p class="font-sample-display">Open Happiness.</p>
+          <div class="font-weights">
+            <div class="weight-item"><div class="weight-sample" style="font-weight:400;">Regular</div><div class="weight-label">400 / Regular</div></div>
+            <div class="weight-item"><div class="weight-sample" style="font-weight:700;">Bold</div><div class="weight-label">700 / Bold</div></div>
+            <div class="weight-item"><div class="weight-sample" style="font-weight:900;">Black</div><div class="weight-label">900 / Black</div></div>
+            <div class="weight-item"><div class="weight-sample" style="font-style:italic;">Italic</div><div class="weight-label">Italic</div></div>
+          </div>
+        </div>
+        <div class="font-card">
+          <p class="font-role">Secondary — Body &amp; UI</p>
+          <p class="font-name">Inter</p>
+          <p style="font-family:var(--ff-body);font-size:1rem;line-height:1.7;color:var(--black);">Since 1886, a red can has been the universal shorthand for shared joy. Wherever you are in the world, that feeling is the same.</p>
+          <div class="font-weights">
+            <div class="weight-item"><div class="weight-sample" style="font-family:var(--ff-body);font-size:1rem;font-weight:300;">Light</div><div class="weight-label">300 / Light</div></div>
+            <div class="weight-item"><div class="weight-sample" style="font-family:var(--ff-body);font-size:1rem;font-weight:400;">Regular</div><div class="weight-label">400 / Regular</div></div>
+            <div class="weight-item"><div class="weight-sample" style="font-family:var(--ff-body);font-size:1rem;font-weight:600;">Semibold</div><div class="weight-label">600 / Semibold</div></div>
+            <div class="weight-item"><div class="weight-sample" style="font-family:var(--ff-body);font-size:1rem;font-weight:700;">Bold</div><div class="weight-label">700 / Bold</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="type-scale">
+        <p class="type-scale-title">Type Scale</p>
+        <div class="scale-row">
+          <div class="scale-meta"><p class="scale-name">Display</p><p class="scale-size">80–120px / 900</p></div>
+          <p style="font-family:var(--ff-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--black);line-height:1;">Taste the Feeling</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><p class="scale-name">H1</p><p class="scale-size">48–64px / 700</p></div>
+          <p style="font-family:var(--ff-display);font-size:clamp(1.5rem,3.5vw,2.5rem);font-weight:700;color:var(--black);">Open Happiness</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><p class="scale-name">H2</p><p class="scale-size">32–40px / 700</p></div>
+          <p style="font-family:var(--ff-display);font-size:clamp(1.25rem,2.5vw,2rem);font-weight:700;color:var(--black);">Share a Coke</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><p class="scale-name">H3</p><p class="scale-size">24px / 600</p></div>
+          <p style="font-family:var(--ff-body);font-size:1.25rem;font-weight:600;color:var(--black);">Real magic. Every sip.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><p class="scale-name">Body</p><p class="scale-size">16px / 400</p></div>
+          <p style="font-family:var(--ff-body);font-size:1rem;color:var(--black);">Refreshment that brings people together, no matter where life takes you.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><p class="scale-name">Caption</p><p class="scale-size">12–14px / 400</p></div>
+          <p style="font-family:var(--ff-body);font-size:0.8125rem;color:var(--stone);">© The Coca-Cola Company. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOURS -->
+  <section id="colours">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">03 — Colour Palette</p>
+          <h2>The <span>Palette</span></h2>
+        </div>
+        <p style="font-size:0.875rem;color:var(--stone);max-width:340px;">Seven colours. Red is sacred. Everything else serves it.</p>
+      </div>
+      <div class="palette-grid">
+        <div class="swatch-card"><div class="swatch-block" style="background:#F40009;"></div><div class="swatch-info"><p class="swatch-name">Coca-Cola Red</p><p class="swatch-hex">#F40009</p><p class="swatch-role">Primary</p></div></div>
+        <div class="swatch-card"><div class="swatch-block" style="background:#C00005;"></div><div class="swatch-info"><p class="swatch-name">Deep Crimson</p><p class="swatch-hex">#C00005</p><p class="swatch-role">Primary Dark</p></div></div>
+        <div class="swatch-card"><div class="swatch-block" style="background:#FFFFFF;border:1px solid #E8E0D8;"></div><div class="swatch-info"><p class="swatch-name">Pure White</p><p class="swatch-hex">#FFFFFF</p><p class="swatch-role">Background / Reverse</p></div></div>
+        <div class="swatch-card"><div class="swatch-block" style="background:#1A1A1A;"></div><div class="swatch-info"><p class="swatch-name">Classic Black</p><p class="swatch-hex">#1A1A1A</p><p class="swatch-role">Text</p></div></div>
+        <div class="swatch-card"><div class="swatch-block" style="background:#FFF8F0;border:1px solid #E8E0D8;"></div><div class="swatch-info"><p class="swatch-name">Warm Cream</p><p class="swatch-hex">#FFF8F0</p><p class="swatch-role">Surface / Tint</p></div></div>
+        <div class="swatch-card"><div class="swatch-block" style="background:#8C8C8C;"></div><div class="swatch-info"><p class="swatch-name">Stone Grey</p><p class="swatch-hex">#8C8C8C</p><p class="swatch-role">Secondary Text / UI</p></div></div>
+        <div class="swatch-card"><div class="swatch-block" style="background:#0D0D0D;"></div><div class="swatch-info"><p class="swatch-name">Midnight</p><p class="swatch-hex">#0D0D0D</p><p class="swatch-role">Deep Contrast</p></div></div>
+      </div>
+      <div class="colour-theory">
+        <div class="theory-item">
+          <p class="theory-label">Energy &amp; Passion</p>
+          <p class="theory-text">Coca-Cola Red (#F40009) is one of the most psychologically powerful brand colours on earth — signalling urgency, warmth, and appetite. It is the brand's irreplaceable core.</p>
+        </div>
+        <div class="theory-item">
+          <p class="theory-label">Contrast &amp; Clarity</p>
+          <p class="theory-text">Pure White creates breathing room and lets red sing. Warm Cream introduces warmth without competing. Together they ensure every layout feels intentional, never chaotic.</p>
+        </div>
+        <div class="theory-item">
+          <p class="theory-label">Depth &amp; Sophistication</p>
+          <p class="theory-text">Midnight and Classic Black anchor compositions and give the palette gravity. Stone Grey keeps secondary information readable without pulling focus from the primary colour story.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIBE & VOICE -->
+  <section id="vibe">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">04 — Brand Voice &amp; Vibe</p>
+          <h2>Feel &amp; <span>Tone</span></h2>
+        </div>
+        <p style="font-size:0.875rem;color:var(--stone);max-width:340px;">How Coca-Cola feels and how it speaks are inseparable. Both must carry the same warmth.</p>
+      </div>
+      <div class="vibe-grid">
+        <div class="vibe-card primary">
+          <p class="vibe-card-label">Brand Vibe</p>
+          <div class="vibe-tags">
+            <span class="vibe-tag">Classic</span>
+            <span class="vibe-tag">Joyful</span>
+            <span class="vibe-tag">Timeless</span>
+            <span class="vibe-tag">Refreshing</span>
+            <span class="vibe-tag">Universal</span>
+          </div>
+          <p class="vibe-statement">"Coca-Cola is the universal language of happiness — a single sip that collapses generations, borders, and moments into one shared feeling."</p>
+        </div>
+        <div class="vibe-card secondary">
+          <p class="vibe-card-label">Tone of Voice</p>
+          <div class="vibe-tags">
+            <span class="vibe-tag">Warm</span>
+            <span class="vibe-tag">Inclusive</span>
+            <span class="vibe-tag">Celebratory</span>
+            <span class="vibe-tag">Optimistic</span>
+            <span class="vibe-tag">Human</span>
+          </div>
+          <p class="vibe-statement">"Whatever the moment — big, small, loud, or quiet — there's always a reason to open happiness."</p>
+          <p class="tone-example">Example: <em>"No event required. Just a cold Coke and someone worth sharing it with."</em></p>
+        </div>
+        <div class="voice-chars">
+          <p class="voice-chars-title">Voice Characteristics</p>
+          <div class="voice-grid">
+            <div class="voice-item">
+              <p class="voice-item-label">Sentence Length</p>
+              <p class="voice-item-text">Short and punchy for impact headlines. Warm, flowing sentences for storytelling. Never dense or technical.</p>
+            </div>
+            <div class="voice-item">
+              <p class="voice-item-label">Formality</p>
+              <p class="voice-item-text">Casual-friendly. Conversational, never corporate. Reads like a message from a trusted friend, not a press release.</p>
+            </div>
+            <div class="voice-item">
+              <p class="voice-item-label">Humour</p>
+              <p class="voice-item-text">Light, warm, universally inclusive. Never edgy, sarcastic, or at anyone's expense. Wit is welcome; cynicism is not.</p>
+            </div>
+            <div class="voice-item">
+              <p class="voice-item-label">Language</p>
+              <p class="voice-item-text">Plain, universal words that anyone anywhere can understand. No jargon. No industry speak. The simpler, the better.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDELINES -->
+  <section id="guidelines">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">05 — Brand Guidelines</p>
+          <h2>The <span>Rules</span></h2>
+        </div>
+        <p style="font-size:0.875rem;color:var(--stone);max-width:340px;">Consistency builds trust. These rules ensure every brand touchpoint speaks with one voice.</p>
+      </div>
+      <div class="guidelines-grid">
+        <div class="guideline-card">
+          <div class="guideline-icon">🔴</div>
+          <h3>Logo Usage</h3>
+          <p>Always maintain a clear zone equal to the cap-height of the "C" on all sides. Apply the wordmark only on Coca-Cola Red, Pure White, or Midnight backgrounds. Never alter scale asymmetrically, add visual effects, or reproduce below 80px digital / 15mm print.</p>
+        </div>
+        <div class="guideline-card">
+          <div class="guideline-icon">🔤</div>
+          <h3>Typography Hierarchy</h3>
+          <p>Playfair Display Bold or Black for hero headlines. Playfair Italic for featured pull quotes. Inter SemiBold for subheadings and UI labels. Inter Regular (16px min) for all body copy. Never mix more than two typefaces on a single page.</p>
+        </div>
+        <div class="guideline-card">
+          <div class="guideline-icon">🎨</div>
+          <h3>Colour Application</h3>
+          <p>Coca-Cola Red drives primary CTAs, key headlines, and identity moments. Pure White is the primary reverse and breathing surface. Warm Cream for page backgrounds and cards. Stone Grey for metadata. Deep Crimson for hover and active states only.</p>
+        </div>
+        <div class="guideline-card">
+          <div class="guideline-icon">📷</div>
+          <h3>Imagery Style</h3>
+          <p>Authentic, candid moments of joy and togetherness. Real people in real places — not staged. Always bright, high contrast, and warm. Avoid desaturated or moody photography. The product appears naturally in the scene, never forced.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section id="values">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">06 — Core Values</p>
+          <h2>What We <span>Believe</span></h2>
+        </div>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.45);max-width:340px;">Four principles that guide every decision, from product to pixel.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-number">01</span>
+          <p class="value-phrase">Refresh the World</p>
+          <p class="value-explanation">Every product, experience, and interaction should leave people feeling better than before. Refreshment is both a physical promise and an emotional one.</p>
+          <div class="value-accent"></div>
+        </div>
+        <div class="value-card">
+          <span class="value-number">02</span>
+          <p class="value-phrase">Create Real Magic</p>
+          <p class="value-explanation">Inspire moments of genuine optimism and happiness — not manufactured, not forced, always real. Magic lives in the small moments that make life worth celebrating.</p>
+          <div class="value-accent"></div>
+        </div>
+        <div class="value-card">
+          <span class="value-number">03</span>
+          <p class="value-phrase">Stay Radically Human</p>
+          <p class="value-explanation">Speak plainly, act warmly, and never lose sight of the people behind every sip. We are not a corporation talking at customers — we are people talking to people.</p>
+          <div class="value-accent"></div>
+        </div>
+        <div class="value-card">
+          <span class="value-number">04</span>
+          <p class="value-phrase">Belong Everywhere</p>
+          <p class="value-explanation">Coca-Cola transcends culture, language, and generation. Inclusion is not a stance — it is our nature. No sip has ever asked for credentials.</p>
+          <div class="value-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section id="introduction">
+    <div class="container">
+      <div class="intro-wrap">
+        <span class="label">07 — Brand Introduction</span>
+        <p class="intro-quote">"More than a beverage. A feeling encoded into culture."</p>
+        <div class="intro-divider"></div>
+        <p class="intro-body">Coca-Cola is more than a beverage — it is a feeling encoded into culture. Since 1886, a single red can has carried the weight of celebrations, quiet afternoons, first dates, and stadium roars, becoming the most recognised symbol of shared joy on earth. The brand does not shout its values; it lives them — in the warmth of its red, the familiarity of its script, and the universal truth that happiness is best when shared. Coca-Cola speaks without barriers: to the child buying their first bottle, to the grandparent who has savoured every decade, to everyone in between. It is refreshment, yes — but more profoundly, it is connection. That is the promise Coca-Cola has made for over a century, and the promise it renews with every sip.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-brand">Coca-<span>Cola</span></p>
+      <p class="footer-meta">Mock brand kit · For design reference only · Not affiliated with The Coca-Cola Company</p>
+      <span class="footer-session">BKB-CC01</span>
+    </div>
+  </footer>
+
+</body>
+</html>

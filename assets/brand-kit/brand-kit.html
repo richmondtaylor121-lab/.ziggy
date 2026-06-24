@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ziggy AI - Brand Guidelines Kit</title>
+  <!-- Google Fonts Connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Design Tokens */
+    :root {
+      --primary-color: #098E5E;    /* Digital Emerald Green */
+      --secondary-color: #0062FF;  /* Electric Cyber Blue */
+      --tertiary-color: #6366F1;   /* Deep Violet */
+      --bg-color: #F8FAFC;         /* Soft Ice White */
+      --card-bg: #FFFFFF;          /* Pure White */
+      --text-main: #2D3748;        /* Deep Slate Grey */
+      --text-muted: #64748B;       /* Slate Grey */
+      --border-color: #E2E8F0;     /* Border Light Gray */
+      
+      --font-headings: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 3rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: var(--font-headings);
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Layout Elements */
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand-title-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand-logo-svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    .intro-box {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Monospace tags */
+    .mono-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: #F1F5F9;
+      color: var(--tertiary-color);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section Specific Styles */
+    /* Colour Swatches */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .swatch-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .swatch-color {
+      height: 75px;
+      width: 100%;
+    }
+
+    .swatch-label {
+      padding: 0.75rem 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: var(--text-main);
+    }
+
+    /* Fonts Preview */
+    .font-preview-box {
+      background: #FAFAFA;
+      border: 1px dashed var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .font-specimen-heading {
+      font-family: var(--font-headings);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .font-specimen-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    /* Vibe & Tone List */
+    .list-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      background: #ECFDF5;
+      color: var(--primary-color);
+      border: 1px solid #A7F3D0;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .badge-blue {
+      background: #EFF6FF;
+      color: var(--secondary-color);
+      border: 1px solid #BFDBFE;
+    }
+
+    .statement-box {
+      font-style: italic;
+      color: var(--text-main);
+      margin-top: 1rem;
+      border-left: 2px solid var(--secondary-color);
+      padding-left: 1rem;
+    }
+
+    /* Core Values list */
+    .value-item {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .value-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .value-title {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .value-title::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--secondary-color);
+      border-radius: 50%;
+    }
+
+    /* Guidelines items */
+    .guide-box {
+      margin-bottom: 1.5rem;
+    }
+
+    .guide-box h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .guide-box ul {
+      list-style-type: none;
+      padding-left: 0.5rem;
+    }
+
+    .guide-box li {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .guide-box li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER / BRAND INTRODUCTION -->
+    <header>
+      <div class="brand-title-area">
+        <!-- SVG recreation of "Z Pulse" Logo Direction -->
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="15" y="25" width="70" height="10" rx="5" fill="url(#emerald-blue-grad)" />
+          <rect x="35" y="45" width="50" height="10" rx="5" fill="url(#emerald-blue-grad)" />
+          <rect x="15" y="65" width="70" height="10" rx="5" fill="url(#emerald-blue-grad)" />
+          <defs>
+            <linearGradient id="emerald-blue-grad" x1="15" y1="25" x2="85" y2="75" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#098E5E" />
+              <stop offset="0.5" stop-color="#0062FF" />
+              <stop offset="1" stop-color="#6366F1" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div>
+          <h1>Ziggy AI</h1>
+          <p style="margin: 0; font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--tertiary-color); text-transform: uppercase;">Brand Guidelines Kit</p>
+        </div>
+      </div>
+      
+      <div class="intro-box">
+        <strong>Brand Introduction:</strong><br>
+        Ziggy AI is a high-performance cognitive operations partner built for enterprises that refuse to just experiment with artificial intelligence. We design, deploy, and scale autonomous agent networks that seamlessly handle complex digital workflows, turning business challenges into clean, structured momentum. Guided by our commitment to engineering precision and operator empowerment, we replace disjointed toolsets with unified, self-improving agents that execute in the background. Our voice is direct, assured, and developer-friendly, reflecting the raw utility of our agent technology. We don't deal in vague AI promises; we build custom operational infrastructure that delivers measurable, compound efficiency from day one. By prioritizing real autonomy over simple automation, Ziggy AI elevates human teams, letting you orchestrate strategy while our agents execute the workload. Start paying for results and compile your operations into code.
+      </div>
+    </header>
+
+    <!-- SECTION GRID 1 -->
+    <div class="grid-2">
+      
+      <!-- LOGO DIRECTION CARD -->
+      <div class="card">
+        <span class="mono-tag">01 / Logo Direction</span>
+        <h3>The Abstract "Z" Pulse</h3>
+        <p>A custom stylized letter <strong>'Z'</strong> constructed from three ascending geometric pulse bars. Rounded edges give it an approachable feel, while precise alignment represents technical reliability.</p>
+        <p><strong>Motifs & Clear Space:</strong> The logo is paired with a clean, semi-bold sans-serif wordmark 'Ziggy AI'. Visual representations must maintain a minimum clear space zone of 50% around the logomark boundary.</p>
+        
+        <!-- Logo Preview Block -->
+        <div style="background: #FAFAFA; border: 1px dashed var(--border-color); border-radius: 8px; padding: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem;">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="25" width="70" height="10" rx="5" fill="#098E5E" />
+            <rect x="35" y="45" width="50" height="10" rx="5" fill="#0062FF" />
+            <rect x="15" y="65" width="70" height="10" rx="5" fill="#6366F1" />
+          </svg>
+          <span style="font-family: var(--font-headings); font-size: 1.5rem; font-weight: 700; color: var(--text-main);">Ziggy AI</span>
+        </div>
+      </div>
+
+      <!-- FONTS CARD -->
+      <div class="card">
+        <span class="mono-tag">02 / Typography Pairings</span>
+        <h3>Space Grotesk & Plus Jakarta</h3>
+        <p>A premium pairing designed to communicate precise technical capabilities while ensuring a comfortable reading experience.</p>
+        
+        <div class="font-preview-box">
+          <div class="font-specimen-heading">Space Grotesk (700 Bold)</div>
+          <p style="margin-bottom: 0.5rem; font-size: 0.8rem; font-family: var(--font-mono);">Used for main headings and strong statements</p>
+          <div style="font-family: var(--font-headings); font-size: 1rem; font-weight: 700; color: var(--text-main);">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz 1234567890
+          </div>
+        </div>
+
+        <div class="font-preview-box">
+          <div class="font-specimen-body" style="font-weight: 600; margin-bottom: 0.25rem;">Plus Jakarta Sans (400/500 Regular)</div>
+          <p style="margin-bottom: 0.5rem; font-size: 0.8rem; font-family: var(--font-mono);">Used for comfortable, legible body reading</p>
+          <div style="font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted);">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz 1234567890
+          </div>
+        </div>
+        
+        <p style="font-size: 0.875rem; margin-top: 0.5rem;">
+          <strong>Monospace Accents:</strong> Labels, metadata tags, and code strings are presented in system monospace stack to emphasize engineering structure.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- SECTION GRID 2 -->
+    <div class="grid-2">
+      
+      <!-- COLOUR PALETTE CARD -->
+      <div class="card">
+        <span class="mono-tag">03 / Colour Palette</span>
+        <h3>Brand Color Swatches</h3>
+        <p>Derived from the high-tech energy of visual references, this palette is refined to support high text legibility on light background interfaces.</p>
+        
+        <div class="swatch-grid">
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #098E5E;"></div>
+            <div class="swatch-label">#098E5E<br><span style="font-size: 0.6rem; font-weight: normal; color: var(--text-muted);">Primary Green</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #0062FF;"></div>
+            <div class="swatch-label">#0062FF<br><span style="font-size: 0.6rem; font-weight: normal; color: var(--text-muted);">Secondary Blue</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #6366F1;"></div>
+            <div class="swatch-label">#6366F1<br><span style="font-size: 0.6rem; font-weight: normal; color: var(--text-muted);">Violet Accent</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #2D3748;"></div>
+            <div class="swatch-label">#2D3748<br><span style="font-size: 0.6rem; font-weight: normal; color: var(--text-muted);">Slate Grey</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #F8FAFC;"></div>
+            <div class="swatch-label">#F8FAFC<br><span style="font-size: 0.6rem; font-weight: normal; color: var(--text-muted);">Ice Background</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIBE & TONE CARD -->
+      <div class="card">
+        <span class="mono-tag">04 / Brand Vibe & Tone</span>
+        <h3>Personality Settings</h3>
+        
+        <p><strong>Brand Vibe:</strong></p>
+        <div class="list-inline">
+          <span class="badge">Agentic</span>
+          <span class="badge">Precise</span>
+          <span class="badge">Empowering</span>
+          <span class="badge">Dynamic</span>
+        </div>
+        <p class="statement-box" style="margin-bottom: 1.5rem;">
+          "Like a hyper-capable co-pilot, Ziggy AI orchestrates complex digital tasks in the background, transforming ambition into high-velocity execution."
+        </p>
+
+        <p><strong>Tone of Voice:</strong></p>
+        <div class="list-inline">
+          <span class="badge badge-blue">Direct</span>
+          <span class="badge badge-blue">Assured</span>
+          <span class="badge badge-blue">Witty</span>
+          <span class="badge badge-blue">Instructive</span>
+        </div>
+        <p class="statement-box" style="border-left-color: var(--primary-color);">
+          "We don't just coordinate your agent network; we compile your operations into executable success."
+        </p>
+      </div>
+
+    </div>
+
+    <!-- SECTION GRID 3 -->
+    <div class="grid-2">
+      
+      <!-- CORE VALUES CARD -->
+      <div class="card">
+        <span class="mono-tag">05 / Core Values</span>
+        <h3>Lighthouse Principles</h3>
+        
+        <div class="value-item">
+          <div class="value-title">Design for Autonomy</div>
+          <p style="margin: 0; font-size: 0.95rem;">Construct systems that think ahead, adapt dynamically, and execute workflows reliably without continuous hand-holding.</p>
+        </div>
+
+        <div class="value-item">
+          <div class="value-title">Execute with Precision</div>
+          <p style="margin: 0; font-size: 0.95rem;">Commit to absolute clarity, clean structural design, and predictable, data-driven outputs in every automated loop.</p>
+        </div>
+
+        <div class="value-item">
+          <div class="value-title">Elevate the Operator</div>
+          <p style="margin: 0; font-size: 0.95rem;">Focus agentic power on eliminating friction, liberating human teams to focus on strategy and high-value decisions.</p>
+        </div>
+
+        <div class="value-item">
+          <div class="value-title">Deliver Measurable ROI</div>
+          <p style="margin: 0; font-size: 0.95rem;">Build only what moves the needle, measuring success by hours saved and metrics improved, not by generic AI hype.</p>
+        </div>
+      </div>
+
+      <!-- BRAND GUIDELINES CARD -->
+      <div class="card">
+        <span class="mono-tag">06 / Application Guidelines</span>
+        <h3>Usage Instructions</h3>
+        
+        <div class="guide-box">
+          <h4>Typography Rules</h4>
+          <ul>
+            <li>Header text is always rendered in Space Grotesk Bold, colored in Primary Green or Slate Grey.</li>
+            <li>Paragraphs use Plus Jakarta Sans, maintaining a minimum line height of 1.5.</li>
+          </ul>
+        </div>
+
+        <div class="guide-box">
+          <h4>Color Allocation Rules</h4>
+          <ul>
+            <li>Primary Green is the headline identifier. Never use it for full paragraphs of text.</li>
+            <li>Secondary Blue is reserved for text hyperlinks, outline borders, and clickable states.</li>
+            <li>Violet is a tertiary structural highlights tool (tags and monospaced indicators).</li>
+          </ul>
+        </div>
+
+        <div class="guide-box">
+          <h4>Imagery Style</h4>
+          <ul>
+            <li>Use clean, high-contrast user interface schematics, wireframes, and minimal 3D isometric vector art.</li>
+            <li>Avoid generic corporate stock photography. Use abstract representations of workflows instead.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VOICE CHARACTERISTICS SECTION -->
+    <div class="card" style="margin-bottom: 2.5rem;">
+      <span class="mono-tag">07 / Voice Characteristics</span>
+      <h3 style="margin-bottom: 1rem;">Linguistic Rules Summary</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <p><strong>Sentence Length:</strong></p>
+          <p style="font-size: 0.95rem; color: var(--text-main);">Short, structured, and action-oriented. We favor direct commands and clear statements over long, complex paragraphs.</p>
+          
+          <p style="margin-top: 1rem;"><strong>Formality Level:</strong></p>
+          <p style="font-size: 0.95rem; color: var(--text-main);">Professional-Casual. We speak with high technical authority but maintain an open, approachable stance (e.g., using contractions like "we've" and "it's").</p>
+        </div>
+        <div>
+          <p><strong>Humour Use:</strong></p>
+          <p style="font-size: 0.95rem; color: var(--text-main);">Dry and clever. Humour is used occasionally as a sharp, witty undercurrent, avoiding cliché AI metaphors or cheesy puns.</p>
+          
+          <p style="margin-top: 1rem;"><strong>Jargon Avoidance:</strong></p>
+          <p style="font-size: 0.95rem; color: var(--text-main);">High. We explain advanced agentic concepts using plain developer terms or clear business utility, bypassing generic industry buzzwords.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

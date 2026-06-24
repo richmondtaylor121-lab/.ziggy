@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bishop AI — Brand Kit · BKB-BA01</title>
+  <meta name="description" content="Official brand guidelines for Bishop AI. Covering logo usage, color palette, typography, voice and tone, messaging, and design application examples." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── DESIGN TOKENS (sourced from bishopai.io live CSS) ─── */
+    :root {
+      /* Primary Palette — Dark Mode */
+      --bg:             #000D1A;   /* hsl(210,100%,4%)  — Page background   */
+      --gold:           #E8B84B;   /* hsl(45,85%,62%)   — Primary brand gold */
+      --gold-dim:       #C49528;   /* Gold dark state / hover               */
+      --gold-glow:      rgba(232,184,75,0.15);
+      --teal:           #1BA8C8;   /* hsl(195,75%,44%)  — Secondary accent   */
+      --teal-dim:       #1385A0;
+      --card:           #10131D;   /* hsl(228,15%,10%)  — Card surface       */
+      --card-2:         #161923;   /* Elevated card surface                  */
+      --border:         #252A3A;   /* hsl(228,12%,18%)  — Border color       */
+      --border-subtle:  #1A1F2E;
+      --muted:          #1E2234;   /* hsl(228,12%,14%)  — Muted surface      */
+      --fg:             #EDE9E2;   /* hsl(40,10%,92%)   — Primary text       */
+      --fg-mid:         #A89E8F;   /* hsl(40,5%,65%)    — Secondary text     */
+      --fg-low:         #5C5648;   /* Tertiary / disabled text               */
+      --destructive:    #EF4444;   /* Error / danger                         */
+
+      /* Light Mode Additions (for docs/slides/print) */
+      --light-bg:       #FAFAF8;
+      --light-surface:  #F2F0EB;
+      --light-border:   #E2DDD6;
+      --light-text:     #0F1420;
+      --light-sub:      #4A5568;
+
+      /* Typography */
+      --ff-head:  'Poppins', system-ui, sans-serif;
+      --ff-body:  'Open Sans', system-ui, sans-serif;
+      --ff-ui:    'Montserrat', system-ui, sans-serif;
+      --ff-mono:  'Courier New', monospace;
+
+      /* Radius & Shadows */
+      --r-sm:  6px;
+      --r-md:  12px;
+      --r-lg:  20px;
+      --r-xl:  32px;
+      --shadow-glow: 0 0 40px rgba(232,184,75,0.12);
+      --shadow-card: 0 4px 32px rgba(0,0,0,0.45);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--ff-head); }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5.5rem 0; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── LABEL ─── */
+    .label {
+      font-family: var(--ff-ui);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(0,13,26,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; max-width: 1140px; margin: 0 auto; padding: 0 2rem;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.875rem; }
+    .nav-bishop-icon {
+      width: 28px; height: 28px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 62% 20%, 80% 20%, 70% 38%, 76% 58%, 60% 55%, 50% 75%, 40% 55%, 24% 58%, 30% 38%, 20% 20%, 38% 20%);
+    }
+    .nav-brand-name {
+      font-family: var(--ff-head); font-weight: 700; font-size: 0.9375rem;
+      color: var(--fg); letter-spacing: -0.01em;
+    }
+    .nav-brand-name span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--ff-ui); font-size: 0.71875rem; font-weight: 600;
+      color: var(--fg-mid); letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-badge {
+      font-family: var(--ff-mono); font-size: 0.6875rem; font-weight: 600;
+      background: rgba(232,184,75,0.1); color: var(--gold);
+      border: 1px solid rgba(232,184,75,0.25); border-radius: 100px;
+      padding: 3px 12px;
+    }
+
+    /* ─── QUICK REFERENCE HERO ─── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding: 7rem 0 5rem;
+      background: var(--bg);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(232,184,75,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(232,184,75,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .hero-glow {
+      position: absolute; top: -200px; right: -100px;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,184,75,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-glow-2 {
+      position: absolute; bottom: -200px; left: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(27,168,200,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      background: rgba(232,184,75,0.08); border: 1px solid rgba(232,184,75,0.2);
+      border-radius: 100px; padding: 6px 18px; margin-bottom: 2.25rem;
+    }
+    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .hero-eyebrow span {
+      font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 800;
+      color: var(--fg); line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 1.75rem;
+    }
+    .hero h1 .accent { color: var(--gold); display: block; }
+    .hero-sub {
+      font-size: 1.125rem; color: var(--fg-mid); max-width: 540px;
+      line-height: 1.75; margin-bottom: 3.5rem;
+    }
+
+    /* QUICK REF GRID */
+    .quickref-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--border); border-radius: var(--r-md); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .quickref-cell { background: var(--card); padding: 1.5rem; }
+    .quickref-label {
+      font-family: var(--ff-ui); font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--fg-low); margin-bottom: 0.75rem;
+    }
+    .quickref-swatch-row { display: flex; gap: 6px; margin-bottom: 0.625rem; }
+    .qs { width: 24px; height: 24px; border-radius: 4px; }
+    .quickref-fonts { display: flex; flex-direction: column; gap: 4px; }
+    .qf-sample { font-size: 1.125rem; font-weight: 700; color: var(--fg); line-height: 1.1; }
+    .qf-name { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--fg-low); }
+    .quickref-voice { }
+    .qv-tag {
+      display: inline-block; padding: 2px 8px;
+      background: rgba(232,184,75,0.1); color: var(--gold);
+      border: 1px solid rgba(232,184,75,0.2); border-radius: 100px;
+      font-family: var(--ff-ui); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin: 2px 2px 2px 0;
+    }
+    .quickref-logo-preview {
+      width: 100%; aspect-ratio: 16/9;
+      background: #000D1A; border-radius: var(--r-sm);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; gap: 0.625rem;
+    }
+    .ql-icon {
+      width: 20px; height: 20px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 62% 20%, 80% 20%, 70% 38%, 76% 58%, 60% 55%, 50% 75%, 40% 55%, 24% 58%, 30% 38%, 20% 20%, 38% 20%);
+    }
+    .ql-text { font-family: var(--ff-head); font-weight: 700; font-size: 0.875rem; color: var(--fg); }
+    .ql-text span { color: var(--gold); }
+
+    /* ─── SECTION HEADER ─── */
+    .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 3rem; gap: 1.5rem; flex-wrap: wrap;
+      border-bottom: 1px solid var(--border); padding-bottom: 1.75rem;
+    }
+    .section-header-left .label { margin-bottom: 0.6rem; }
+    .section-header h2 {
+      font-size: clamp(1.875rem, 4vw, 2.875rem);
+      font-weight: 700; color: var(--fg); letter-spacing: -0.02em;
+    }
+    .section-header h2 span { color: var(--gold); }
+    .section-desc { font-size: 0.9375rem; color: var(--fg-mid); max-width: 360px; line-height: 1.7; }
+
+    /* ─── LOGO SECTION ─── */
+    #logo { background: var(--bg); }
+    .logo-variations-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+    .logo-var-card { border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--border); }
+    .logo-var-swatch {
+      height: 180px; display: flex; align-items: center; justify-content: center;
+      gap: 0.75rem; flex-direction: column;
+    }
+    .logo-var-swatch .lv-icon {
+      width: 36px; height: 36px;
+      clip-path: polygon(50% 0%, 62% 20%, 80% 20%, 70% 38%, 76% 58%, 60% 55%, 50% 75%, 40% 55%, 24% 58%, 30% 38%, 20% 20%, 38% 20%);
+    }
+    .logo-var-swatch .lv-wordmark {
+      font-family: var(--ff-head); font-weight: 700; font-size: 1.0625rem;
+      letter-spacing: -0.01em;
+    }
+    .lv-swatch-dark   { background: #000D1A; }
+    .lv-swatch-dark .lv-icon    { background: var(--gold); }
+    .lv-swatch-dark .lv-wordmark { color: #fff; }
+    .lv-swatch-dark .lv-wordmark span { color: var(--gold); }
+    .lv-swatch-light  { background: #FAFAF8; border: none; }
+    .lv-swatch-light .lv-icon   { background: #0F1420; }
+    .lv-swatch-light .lv-wordmark { color: #0F1420; }
+    .lv-swatch-light .lv-wordmark span { color: var(--gold-dim); }
+    .lv-swatch-mono-w { background: #1A1F2E; }
+    .lv-swatch-mono-w .lv-icon   { background: #fff; }
+    .lv-swatch-mono-w .lv-wordmark { color: #fff; }
+    .lv-swatch-mono-w .lv-wordmark span { color: #fff; }
+    .lv-swatch-mono-d { background: #E8E4DC; }
+    .lv-swatch-mono-d .lv-icon   { background: #0F1420; }
+    .lv-swatch-mono-d .lv-wordmark { color: #0F1420; }
+    .lv-swatch-mono-d .lv-wordmark span { color: #0F1420; }
+    .logo-var-info { padding: 0.875rem 1.125rem; background: var(--card-2); }
+    .logo-var-title { font-family: var(--ff-ui); font-weight: 600; font-size: 0.8125rem; color: var(--fg); margin-bottom: 2px; }
+    .logo-var-desc  { font-size: 0.75rem; color: var(--fg-mid); }
+
+    .logo-rules-block {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem;
+    }
+    .logo-rule-panel {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 2rem;
+    }
+    .logo-rule-panel h3 {
+      font-family: var(--ff-ui); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--fg); margin-bottom: 1.25rem;
+    }
+    .logo-rule-panel h3.do-label  { color: #4ADE80; }
+    .logo-rule-panel h3.dont-label { color: #F87171; }
+    .rule-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .rule-list li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: var(--fg-mid); line-height: 1.55; }
+    .rule-list li .ri {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.625rem; font-weight: 900; margin-top: 1px;
+    }
+    .ri.do   { background: rgba(74,222,128,0.15); color: #4ADE80; }
+    .ri.dont { background: rgba(248,113,113,0.15); color: #F87171; }
+
+    .logo-context-table {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r-md); overflow: hidden;
+    }
+    .ctx-table-header {
+      display: grid; grid-template-columns: 2fr 1.5fr 1fr 1.5fr;
+      padding: 1rem 1.5rem; background: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .ctx-table-header span {
+      font-family: var(--ff-ui); font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-low);
+    }
+    .ctx-table-row {
+      display: grid; grid-template-columns: 2fr 1.5fr 1fr 1.5fr;
+      padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-subtle);
+      align-items: center; transition: background 0.15s;
+    }
+    .ctx-table-row:last-child { border-bottom: none; }
+    .ctx-table-row:hover { background: var(--muted); }
+    .ctx-table-row span { font-size: 0.875rem; color: var(--fg-mid); }
+    .ctx-table-row span.ctx-platform { color: var(--fg); font-weight: 500; }
+    .ctx-tag {
+      display: inline-block; padding: 2px 8px; border-radius: 100px;
+      font-family: var(--ff-mono); font-size: 0.6875rem;
+      background: var(--muted); color: var(--fg-mid);
+      border: 1px solid var(--border);
+    }
+
+    /* ─── COLOR SECTION ─── */
+    #colours { background: var(--card); }
+    .palette-tier { margin-bottom: 3rem; }
+    .palette-tier-label {
+      font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--fg-low); margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .palette-row { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .swatch-card {
+      flex: 1; min-width: 140px; border-radius: var(--r-md); overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .swatch-card:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .swatch-block { height: 120px; width: 100%; }
+    .swatch-info { padding: 1rem 1.125rem; background: var(--card-2); }
+    .swatch-name { font-family: var(--ff-ui); font-weight: 600; font-size: 0.8125rem; color: var(--fg); margin-bottom: 4px; }
+    .swatch-codes { display: flex; flex-direction: column; gap: 2px; }
+    .swatch-hex  { font-family: var(--ff-mono); font-size: 0.75rem; color: var(--gold); }
+    .swatch-rgb  { font-family: var(--ff-mono); font-size: 0.6875rem; color: var(--fg-low); }
+    .swatch-cmyk { font-family: var(--ff-mono); font-size: 0.6875rem; color: var(--fg-low); }
+    .swatch-role { font-size: 0.6875rem; color: var(--fg-low); margin-top: 6px; font-style: italic; }
+
+    .color-gaps-panel {
+      background: rgba(232,184,75,0.05); border: 1px solid rgba(232,184,75,0.2);
+      border-radius: var(--r-md); padding: 2rem; margin-top: 1rem;
+    }
+    .gap-panel-title {
+      font-family: var(--ff-ui); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .gap-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .gap-item { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.875rem; color: var(--fg-mid); line-height: 1.55; }
+    .gap-pill {
+      flex-shrink: 0; padding: 2px 10px; border-radius: 100px;
+      font-family: var(--ff-ui); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      background: rgba(232,184,75,0.12); color: var(--gold);
+      border: 1px solid rgba(232,184,75,0.25); margin-top: 1px;
+    }
+
+    /* Light mode palette section */
+    .palette-light-note {
+      background: var(--light-bg); border: 1px solid var(--light-border);
+      border-radius: var(--r-md); padding: 2rem; margin-top: 2rem;
+    }
+    .plt-note-title {
+      font-family: var(--ff-ui); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--light-sub);
+      margin-bottom: 1rem;
+    }
+    .plt-swatches-light { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .plt-sw {
+      flex: 1; min-width: 100px; border-radius: var(--r-sm);
+      border: 1px solid var(--light-border); overflow: hidden;
+    }
+    .plt-sw-block { height: 64px; }
+    .plt-sw-info { padding: 0.625rem 0.75rem; background: #fff; }
+    .plt-sw-name { font-size: 0.75rem; font-weight: 600; color: var(--light-text); }
+    .plt-sw-hex  { font-family: var(--ff-mono); font-size: 0.6875rem; color: var(--light-sub); }
+
+    /* ─── TYPOGRAPHY ─── */
+    #typography { background: var(--bg); }
+    .type-pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+    .type-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 2.5rem; position: relative; overflow: hidden;
+    }
+    .type-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: linear-gradient(90deg, var(--gold), var(--teal));
+    }
+    .type-role {
+      font-family: var(--ff-ui); font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-low);
+      margin-bottom: 0.375rem;
+    }
+    .type-name { font-family: var(--ff-ui); font-weight: 700; font-size: 0.875rem; color: var(--gold); margin-bottom: 1.5rem; }
+    .type-sample-head {
+      font-family: var(--ff-head); font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700; color: var(--fg); line-height: 1; margin-bottom: 1rem;
+    }
+    .type-sample-body { font-size: 1rem; line-height: 1.75; color: var(--fg-mid); margin-bottom: 1.5rem; }
+    .type-weights-row {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      padding-top: 1.5rem; border-top: 1px solid var(--border);
+    }
+    .tw-item { }
+    .tw-sample { font-size: 1rem; color: var(--fg); }
+    .tw-label  { font-size: 0.6rem; color: var(--fg-low); font-family: var(--ff-mono); margin-top: 2px; }
+
+    .type-scale-block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 2.5rem; margin-bottom: 2rem;
+    }
+    .type-scale-title {
+      font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-low);
+      margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+    }
+    .scale-row {
+      display: flex; align-items: baseline; gap: 2rem;
+      padding: 1rem 0; border-bottom: 1px solid var(--border-subtle);
+    }
+    .scale-row:last-child { border-bottom: none; }
+    .scale-meta { flex-shrink: 0; width: 130px; }
+    .scale-tag {
+      display: inline-block; font-family: var(--ff-mono); font-size: 0.625rem;
+      padding: 1px 6px; border-radius: 3px; background: var(--muted);
+      color: var(--gold); border: 1px solid var(--border); margin-bottom: 2px;
+    }
+    .scale-spec { font-size: 0.625rem; color: var(--fg-low); font-family: var(--ff-mono); }
+
+    .type-alts-panel {
+      background: rgba(27,168,200,0.05); border: 1px solid rgba(27,168,200,0.2);
+      border-radius: var(--r-md); padding: 2rem;
+    }
+    .type-alts-title {
+      font-family: var(--ff-ui); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1.25rem;
+    }
+    .alts-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .alt-item { }
+    .alt-original { font-size: 0.75rem; color: var(--fg-low); margin-bottom: 2px; }
+    .alt-name { font-weight: 600; font-size: 0.875rem; color: var(--fg); }
+    .alt-fallback { font-family: var(--ff-mono); font-size: 0.6875rem; color: var(--teal); margin-top: 2px; }
+    .alt-platforms { font-size: 0.6875rem; color: var(--fg-low); margin-top: 2px; }
+
+    /* ─── ICONOGRAPHY ─── */
+    #iconography { background: var(--card); }
+    .icon-spec-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+    .icon-spec-card {
+      background: var(--card-2); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 1.75rem;
+    }
+    .icon-spec-card h3 {
+      font-family: var(--ff-ui); font-size: 0.8125rem; font-weight: 700;
+      color: var(--fg); margin-bottom: 0.875rem;
+    }
+    .icon-spec-card p { font-size: 0.875rem; color: var(--fg-mid); line-height: 1.65; }
+    .icon-preview-row { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .icon-preview {
+      flex: 1; min-width: 140px;
+      background: var(--card-2); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 1.5rem; text-align: center;
+    }
+    .icon-preview svg { width: 40px; height: 40px; margin: 0 auto 0.75rem; display: block; }
+    .icon-preview-label { font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-low); }
+
+    .icon-donts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .icon-do-panel, .icon-dont-panel {
+      background: var(--card-2); border-radius: var(--r-md); padding: 1.5rem;
+    }
+    .icon-do-panel { border: 1px solid rgba(74,222,128,0.2); }
+    .icon-dont-panel { border: 1px solid rgba(248,113,113,0.2); }
+    .idp-title {
+      font-family: var(--ff-ui); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .idp-title.do { color: #4ADE80; }
+    .idp-title.dont { color: #F87171; }
+    .idp-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .idp-list li { font-size: 0.875rem; color: var(--fg-mid); padding-left: 1.25rem; position: relative; }
+    .idp-list li::before { content: '–'; position: absolute; left: 0; color: var(--fg-low); }
+
+    /* ─── VOICE & TONE ─── */
+    #voice { background: var(--bg); }
+    .voice-attrs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--border); margin-bottom: 2rem; }
+    .voice-attr-cell { background: var(--card); padding: 2rem; }
+    .voice-attr-word {
+      font-family: var(--ff-head); font-size: 1.5rem; font-weight: 700;
+      color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .voice-attr-sub { font-size: 0.75rem; color: var(--fg-low); font-style: italic; margin-bottom: 1rem; }
+    .voice-attr-desc { font-size: 0.875rem; color: var(--fg-mid); line-height: 1.6; }
+
+    .voice-examples-block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 2.5rem; margin-bottom: 2rem;
+    }
+    .voice-examples-title {
+      font-family: var(--ff-ui); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--fg-low); margin-bottom: 2rem;
+      padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+    }
+    .voice-example-pair { margin-bottom: 2rem; }
+    .voice-example-pair:last-child { margin-bottom: 0; }
+    .vep-context {
+      font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-low);
+      margin-bottom: 1rem;
+    }
+    .vep-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .vep-col { border-radius: var(--r-sm); padding: 1.25rem; }
+    .vep-off { background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.2); }
+    .vep-on  { background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.2); }
+    .vep-badge {
+      display: inline-block; font-family: var(--ff-ui); font-size: 0.5625rem;
+      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 100px; margin-bottom: 0.75rem;
+    }
+    .vep-badge.off { background: rgba(248,113,113,0.15); color: #F87171; border: 1px solid rgba(248,113,113,0.25); }
+    .vep-badge.on  { background: rgba(74,222,128,0.15); color: #4ADE80; border: 1px solid rgba(74,222,128,0.25); }
+    .vep-col p { font-size: 0.9375rem; color: var(--fg-mid); line-height: 1.6; font-style: italic; }
+    .vep-col.vep-on p { color: var(--fg); }
+
+    .voice-context-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .voice-ctx-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 2rem;
+    }
+    .voice-ctx-card h3 {
+      font-family: var(--ff-ui); font-size: 0.875rem; font-weight: 700;
+      color: var(--fg); margin-bottom: 0.375rem;
+    }
+    .voice-ctx-card .ctx-desc { font-size: 0.8125rem; color: var(--fg-low); font-style: italic; margin-bottom: 1.25rem; }
+    .ctx-examples { display: flex; flex-direction: column; gap: 0.625rem; }
+    .ctx-ex {
+      font-size: 0.875rem; color: var(--fg-mid); padding-left: 1rem;
+      border-left: 2px solid var(--gold); line-height: 1.6;
+    }
+
+    /* ─── MESSAGING ─── */
+    #messaging { background: var(--card); }
+    .positioning-block {
+      background: linear-gradient(135deg, rgba(232,184,75,0.06) 0%, rgba(27,168,200,0.06) 100%);
+      border: 1px solid rgba(232,184,75,0.2);
+      border-radius: var(--r-lg); padding: 3rem; margin-bottom: 2rem;
+      text-align: center;
+    }
+    .pos-label { display: block; font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .pos-statement {
+      font-family: var(--ff-head); font-size: clamp(1.375rem, 3vw, 2rem);
+      font-weight: 700; color: var(--fg); line-height: 1.35; max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+    .pos-narrative { font-size: 1rem; color: var(--fg-mid); line-height: 1.75; max-width: 640px; margin: 0 auto; }
+
+    .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+    .terms-panel {
+      background: var(--card-2); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 2rem;
+    }
+    .terms-panel h3 {
+      font-family: var(--ff-ui); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .terms-panel h3.use-label  { color: #4ADE80; }
+    .terms-panel h3.avoid-label { color: #F87171; }
+    .terms-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .term-tag {
+      padding: 4px 12px; border-radius: 100px;
+      font-family: var(--ff-ui); font-size: 0.75rem; font-weight: 500;
+    }
+    .term-tag.use   { background: rgba(74,222,128,0.08); color: #4ADE80; border: 1px solid rgba(74,222,128,0.2); }
+    .term-tag.avoid { background: rgba(248,113,113,0.08); color: #F87171; border: 1px solid rgba(248,113,113,0.2); }
+
+    /* ─── DESIGN APPLICATIONS ─── */
+    #applications { background: var(--bg); }
+    .app-examples-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .app-mockup {
+      border-radius: var(--r-md); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .app-mockup-header {
+      padding: 0.75rem 1.25rem;
+      background: var(--muted);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .app-mockup-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .app-mockup-title {
+      font-family: var(--ff-ui); font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-low);
+      margin-left: auto;
+    }
+    .app-mockup-body { padding: 1.5rem; }
+    .app-annotation {
+      padding: 0.875rem 1.25rem;
+      background: var(--card-2);
+      border-top: 1px solid var(--border);
+    }
+    .app-anno-row {
+      display: flex; align-items: center; gap: 0.625rem;
+      font-family: var(--ff-mono); font-size: 0.6875rem; color: var(--fg-low);
+      margin-bottom: 4px;
+    }
+    .app-anno-row:last-child { margin-bottom: 0; }
+    .app-anno-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+    /* LinkedIn mockup */
+    .li-post {
+      background: #1B1F2E; border-radius: var(--r-sm); padding: 1.25rem;
+    }
+    .li-post-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .li-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-head); font-weight: 700; font-size: 0.9375rem; color: #000;
+    }
+    .li-info h4 { font-size: 0.875rem; font-weight: 600; color: var(--fg); }
+    .li-info p  { font-size: 0.75rem; color: var(--fg-mid); }
+    .li-body { font-size: 0.875rem; color: var(--fg-mid); line-height: 1.65; margin-bottom: 1rem; }
+    .li-body strong { color: var(--fg); }
+    .li-stat-card {
+      background: rgba(232,184,75,0.08); border: 1px solid rgba(232,184,75,0.2);
+      border-radius: var(--r-sm); padding: 1rem; margin-bottom: 1rem;
+    }
+    .li-stat-num {
+      font-family: var(--ff-head); font-size: 2rem; font-weight: 800; color: var(--gold);
+      line-height: 1;
+    }
+    .li-stat-label { font-size: 0.75rem; color: var(--fg-mid); margin-top: 2px; }
+    .li-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .li-tag { padding: 2px 10px; border-radius: 100px; background: rgba(27,168,200,0.1); border: 1px solid rgba(27,168,200,0.2); font-size: 0.6875rem; color: var(--teal); }
+
+    /* Deck title slide mockup */
+    .deck-slide {
+      background: linear-gradient(135deg, #000D1A 0%, #0A1428 50%, #030C18 100%);
+      border-radius: var(--r-sm); padding: 2rem; min-height: 200px;
+      display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;
+    }
+    .deck-slide::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--teal), transparent);
+    }
+    .deck-grid-bg {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(232,184,75,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(232,184,75,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .deck-badge {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      background: rgba(232,184,75,0.08); border: 1px solid rgba(232,184,75,0.2);
+      border-radius: 100px; padding: 3px 10px;
+      font-family: var(--ff-ui); font-size: 0.5625rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
+      width: fit-content; position: relative; z-index: 1;
+    }
+    .deck-heading {
+      font-family: var(--ff-head); font-size: 1.5rem; font-weight: 800;
+      color: var(--fg); line-height: 1.1; position: relative; z-index: 1;
+    }
+    .deck-heading span { color: var(--gold); }
+    .deck-sub { font-size: 0.75rem; color: var(--fg-mid); position: relative; z-index: 1; }
+    .deck-logo {
+      display: flex; align-items: center; gap: 0.5rem;
+      position: absolute; bottom: 1.25rem; right: 1.25rem; z-index: 1;
+    }
+    .deck-logo-icon {
+      width: 18px; height: 18px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 62% 20%, 80% 20%, 70% 38%, 76% 58%, 60% 55%, 50% 75%, 40% 55%, 24% 58%, 30% 38%, 20% 20%, 38% 20%);
+    }
+    .deck-logo-text { font-family: var(--ff-head); font-weight: 700; font-size: 0.6875rem; color: rgba(255,255,255,0.5); }
+    .deck-logo-text span { color: var(--gold); }
+
+    /* Email signature mockup */
+    .email-sig {
+      background: #FAFAF8; border-radius: var(--r-sm); padding: 1.25rem;
+    }
+    .sig-divider { height: 2px; background: linear-gradient(90deg, var(--gold), var(--teal)); border-radius: 2px; margin-bottom: 1rem; }
+    .sig-row { display: flex; gap: 0.875rem; align-items: flex-start; }
+    .sig-icon-block {
+      width: 36px; height: 36px; background: #000D1A; border-radius: var(--r-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .sig-icon {
+      width: 16px; height: 16px; background: var(--gold);
+      clip-path: polygon(50% 0%, 62% 20%, 80% 20%, 70% 38%, 76% 58%, 60% 55%, 50% 75%, 40% 55%, 24% 58%, 30% 38%, 20% 20%, 38% 20%);
+    }
+    .sig-name { font-family: var(--ff-head); font-weight: 700; font-size: 0.9375rem; color: #0F1420; }
+    .sig-title { font-family: var(--ff-ui); font-size: 0.75rem; color: var(--gold-dim); font-weight: 600; margin-bottom: 4px; }
+    .sig-contact { font-size: 0.75rem; color: #4A5568; }
+    .sig-url { font-family: var(--ff-mono); font-size: 0.6875rem; color: #1BA8C8; }
+
+    /* Website hero section mockup */
+    .web-hero {
+      background: #000D1A; border-radius: var(--r-sm); padding: 1.75rem; position: relative; overflow: hidden;
+    }
+    .web-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(232,184,75,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(232,184,75,0.03) 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+    }
+    .web-nav-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; position: relative; z-index: 1; }
+    .web-nav-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .web-nav-icon {
+      width: 16px; height: 16px; background: var(--gold);
+      clip-path: polygon(50% 0%, 62% 20%, 80% 20%, 70% 38%, 76% 58%, 60% 55%, 50% 75%, 40% 55%, 24% 58%, 30% 38%, 20% 20%, 38% 20%);
+    }
+    .web-nav-text { font-family: var(--ff-head); font-weight: 700; font-size: 0.75rem; color: var(--fg); }
+    .web-nav-text span { color: var(--gold); }
+    .web-nav-cta {
+      padding: 4px 12px; background: var(--gold); border-radius: 100px;
+      font-family: var(--ff-ui); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #000;
+    }
+    .web-hero-tag {
+      display: inline-block; padding: 2px 10px; border-radius: 100px;
+      background: rgba(232,184,75,0.08); border: 1px solid rgba(232,184,75,0.2);
+      font-family: var(--ff-ui); font-size: 0.5625rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem; position: relative; z-index: 1;
+    }
+    .web-hero-h1 {
+      font-family: var(--ff-head); font-size: 1.5rem; font-weight: 800;
+      color: var(--fg); line-height: 1.05; margin-bottom: 0.625rem;
+      position: relative; z-index: 1;
+    }
+    .web-hero-h1 span { color: var(--gold); }
+    .web-hero-sub { font-size: 0.75rem; color: var(--fg-mid); margin-bottom: 1rem; position: relative; z-index: 1; }
+    .web-hero-ctas { display: flex; gap: 0.625rem; position: relative; z-index: 1; }
+    .web-cta-primary {
+      padding: 6px 16px; background: var(--gold); border-radius: var(--r-sm);
+      font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 700; color: #000;
+    }
+    .web-cta-ghost {
+      padding: 6px 16px; background: transparent;
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      font-family: var(--ff-ui); font-size: 0.6875rem; font-weight: 600; color: var(--fg-mid);
+    }
+
+    /* ─── NORMS ─── */
+    #norms { background: var(--card); }
+    .norms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .norm-card {
+      background: var(--card-2); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 2rem;
+    }
+    .norm-card h3 {
+      font-family: var(--ff-head); font-size: 1.0625rem; font-weight: 700;
+      color: var(--fg); margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .norm-rules { display: flex; flex-direction: column; gap: 0.875rem; }
+    .norm-rule { font-size: 0.875rem; color: var(--fg-mid); line-height: 1.6; padding-left: 1rem; position: relative; }
+    .norm-rule::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: 0.625rem; top: 3px; }
+    .norm-rule strong { color: var(--fg); }
+    .contrast-table {
+      width: 100%; border-collapse: collapse; font-size: 0.8125rem; margin-top: 1rem;
+    }
+    .contrast-table th, .contrast-table td { padding: 0.625rem 0.875rem; text-align: left; border: 1px solid var(--border); }
+    .contrast-table th { background: var(--muted); color: var(--fg-low); font-family: var(--ff-ui); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .contrast-table td { color: var(--fg-mid); }
+    .contrast-pass { color: #4ADE80; font-weight: 700; }
+    .contrast-warn { color: #FBBF24; font-weight: 700; }
+
+    /* ─── VALUES / IDENTITY ─── */
+    #identity { background: var(--bg); }
+    .identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .identity-values-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--border); border-radius: var(--r-md);
+      overflow: hidden; border: 1px solid var(--border);
+    }
+    .iv-card {
+      background: var(--card); padding: 2.5rem; position: relative; overflow: hidden;
+      transition: background 0.2s;
+    }
+    .iv-card:hover { background: var(--card-2); }
+    .iv-num {
+      font-family: var(--ff-head); font-size: 3.5rem; font-weight: 900;
+      color: rgba(232,184,75,0.1); line-height: 1; display: block; margin-bottom: 0.75rem;
+    }
+    .iv-phrase {
+      font-family: var(--ff-head); font-size: 1.25rem; font-weight: 700;
+      color: var(--fg); margin-bottom: 0.625rem;
+    }
+    .iv-desc { font-size: 0.875rem; color: var(--fg-mid); line-height: 1.65; max-width: 280px; }
+    .iv-accent {
+      position: absolute; bottom: 0; left: 0; height: 2px; width: 0;
+      background: linear-gradient(90deg, var(--gold), var(--teal));
+      transition: width 0.4s ease;
+    }
+    .iv-card:hover .iv-accent { width: 100%; }
+
+    .identity-narrative {
+      background: linear-gradient(135deg, var(--card) 0%, var(--card-2) 100%);
+      border: 1px solid var(--border); border-radius: var(--r-md); padding: 2.5rem;
+    }
+    .identity-narrative .pos-label { text-align: left; display: block; margin-bottom: 0.875rem; }
+    .identity-narrative blockquote {
+      font-family: var(--ff-head); font-size: 1.25rem; font-weight: 700;
+      color: var(--fg); line-height: 1.4; border-left: 3px solid var(--gold);
+      padding-left: 1.25rem; margin-bottom: 1.5rem;
+    }
+    .identity-narrative p { font-size: 0.9375rem; color: var(--fg-mid); line-height: 1.75; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #000811;
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+    }
+    .footer-inner {
+      max-width: 1140px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-icon {
+      width: 24px; height: 24px; background: var(--gold);
+      clip-path: polygon(50% 0%, 62% 20%, 80% 20%, 70% 38%, 76% 58%, 60% 55%, 50% 75%, 40% 55%, 24% 58%, 30% 38%, 20% 20%, 38% 20%);
+    }
+    .footer-wordmark {
+      font-family: var(--ff-head); font-weight: 700; font-size: 1rem; color: var(--fg);
+    }
+    .footer-wordmark span { color: var(--gold); }
+    .footer-meta { font-size: 0.75rem; color: var(--fg-low); }
+    .footer-session {
+      font-family: var(--ff-mono); font-size: 0.6875rem;
+      background: var(--muted); color: var(--fg-low);
+      border: 1px solid var(--border); border-radius: 4px; padding: 4px 12px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .logo-variations-grid { grid-template-columns: 1fr 1fr; }
+      .quickref-grid { grid-template-columns: 1fr 1fr; }
+      .type-pair-grid { grid-template-columns: 1fr; }
+      .voice-attrs-grid { grid-template-columns: 1fr 1fr; }
+      .voice-context-grid { grid-template-columns: 1fr; }
+      .app-examples-grid { grid-template-columns: 1fr; }
+      .terms-grid { grid-template-columns: 1fr; }
+      .ctx-table-header, .ctx-table-row { grid-template-columns: 1fr 1fr; }
+      .ctx-table-header span:nth-child(3), .ctx-table-row span:nth-child(3) { display: none; }
+      .icon-spec-grid { grid-template-columns: 1fr 1fr; }
+      .alts-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .logo-variations-grid { grid-template-columns: 1fr; }
+      .logo-rules-block { grid-template-columns: 1fr; }
+      .norms-grid { grid-template-columns: 1fr; }
+      .identity-values-grid { grid-template-columns: 1fr; }
+      .identity-grid { grid-template-columns: 1fr; }
+      .icon-donts-row { grid-template-columns: 1fr; }
+      .quickref-grid { grid-template-columns: 1fr 1fr; }
+      .vep-cols { grid-template-columns: 1fr; }
+      .alts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-bishop-icon"></div>
+        <span class="nav-brand-name">Bishop <span>AI</span> — Brand Kit</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#logo">Logo</a></li>
+        <li><a href="#colours">Colors</a></li>
+        <li><a href="#typography">Type</a></li>
+        <li><a href="#iconography">Icons</a></li>
+        <li><a href="#voice">Voice</a></li>
+        <li><a href="#messaging">Messaging</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#norms">Norms</a></li>
+        <li><a href="#identity">Identity</a></li>
+      </ul>
+      <span class="nav-badge">BKB-BA01</span>
+    </div>
+  </nav>
+
+  <!-- HERO / QUICK REFERENCE -->
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span>Official Brand Guidelines · bishopai.io · BKB-BA01</span>
+      </div>
+      <h1>Bishop <span class="accent">AI</span></h1>
+      <p class="hero-sub">The single source of truth for all visual and verbal brand decisions. Built for internal teams, external designers, contractors, and partners.</p>
+
+      <!-- Quick Reference Cheat Sheet -->
+      <div class="quickref-grid">
+        <div class="quickref-cell">
+          <p class="quickref-label">Logo</p>
+          <div class="quickref-logo-preview">
+            <div class="ql-icon"></div>
+            <div class="ql-text">Bishop <span>AI</span></div>
+          </div>
+        </div>
+        <div class="quickref-cell">
+          <p class="quickref-label">Primary Colors</p>
+          <div class="quickref-swatch-row">
+            <div class="qs" style="background:#000D1A; border:1px solid #252A3A;" title="Deep Navy"></div>
+            <div class="qs" style="background:#E8B84B;" title="Brand Gold"></div>
+            <div class="qs" style="background:#1BA8C8;" title="Teal"></div>
+            <div class="qs" style="background:#EDE9E2;" title="Foreground"></div>
+          </div>
+          <p style="font-family:var(--ff-mono);font-size:0.625rem;color:var(--fg-low);">#000D1A · #E8B84B · #1BA8C8</p>
+        </div>
+        <div class="quickref-cell">
+          <p class="quickref-label">Typography</p>
+          <div class="quickref-fonts">
+            <div>
+              <div class="qf-sample" style="font-family:'Poppins',sans-serif;">Aa Bb Cc</div>
+              <div class="qf-name">Poppins — Headings</div>
+            </div>
+            <div>
+              <div class="qf-sample" style="font-family:'Open Sans',sans-serif;font-size:0.9rem;">Aa Bb Cc</div>
+              <div class="qf-name">Open Sans — Body</div>
+            </div>
+          </div>
+        </div>
+        <div class="quickref-cell">
+          <p class="quickref-label">Brand Voice</p>
+          <div class="quickref-voice">
+            <span class="qv-tag">Professional</span>
+            <span class="qv-tag">Direct</span>
+            <span class="qv-tag">Results-Driven</span>
+            <span class="qv-tag">Collaborative</span>
+          </div>
+          <p style="font-size:0.6875rem;color:var(--fg-low);margin-top:0.625rem;line-height:1.5;">Activate AI for revenue growth and better decision-making.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section id="logo">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">01 — Logo System</p>
+          <h2>The <span>Mark</span></h2>
+        </div>
+        <p class="section-desc">The Bishop AI logo combines a geometric chess bishop icon with the wordmark in Poppins Bold. The icon represents strategic intelligence — the chess bishop moves diagonally, covering ground decisively. Handle with care.</p>
+      </div>
+
+      <!-- LOGO CONCEPT RATIONALE -->
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);padding:2rem;margin-bottom:2rem;display:grid;grid-template-columns:1fr 1.5fr;gap:2rem;align-items:center;">
+        <div style="background:#000D1A;border-radius:var(--r-sm);border:1px solid var(--border);padding:2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;min-height:200px;">
+          <!-- SVG Logo Representation -->
+          <svg width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Bishop chess piece - geometric/minimal -->
+            <circle cx="24" cy="8" r="5" fill="#E8B84B"/>
+            <line x1="24" y1="4" x2="24" y2="12" stroke="#000D1A" stroke-width="1.5"/>
+            <line x1="20" y1="8" x2="28" y2="8" stroke="#000D1A" stroke-width="1.5"/>
+            <path d="M15 14 Q24 10 33 14 L30 30 Q24 34 18 30 Z" fill="#E8B84B" opacity="0.9"/>
+            <path d="M12 38 L36 38 L34 50 L14 50 Z" fill="#E8B84B" opacity="0.7"/>
+            <rect x="8" y="50" width="32" height="6" rx="3" fill="#E8B84B"/>
+            <!-- Circuit node dots -->
+            <circle cx="15" cy="20" r="2" fill="#1BA8C8" opacity="0.8"/>
+            <circle cx="33" cy="24" r="2" fill="#1BA8C8" opacity="0.8"/>
+            <line x1="15" y1="20" x2="33" y2="24" stroke="#1BA8C8" stroke-width="0.75" stroke-dasharray="3 2" opacity="0.5"/>
+          </svg>
+          <div style="text-align:center;">
+            <div style="font-family:var(--ff-head);font-weight:700;font-size:1.25rem;color:#fff;">Bishop <span style="color:var(--gold);">AI</span></div>
+            <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--fg-low);margin-top:2px;">bishopai.io</div>
+          </div>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:0.75rem;">Logo Rationale</p>
+          <p style="font-size:0.9375rem;color:var(--fg-mid);line-height:1.75;margin-bottom:1rem;">The bishop chess piece is a direct expression of Bishop AI's identity: <strong style="color:var(--fg);">strategic</strong>, <strong style="color:var(--fg);">precise</strong>, and capable of decisive moves across the board. Unlike rooks or pawns, the bishop operates at angles — it sees things others don't. That's Bishop AI: oblique intelligence applied to revenue problems.</p>
+          <p style="font-size:0.9375rem;color:var(--fg-mid);line-height:1.75;">The amber-gold icon on deep navy creates immediate authority. The teal circuit detail signals AI/technology without being cliché. Poppins Bold for the wordmark is modern, geometric, and confident — never corporate or stiff.</p>
+        </div>
+      </div>
+
+      <!-- LOGO VARIATIONS -->
+      <p class="label" style="margin-bottom:1.25rem;">Approved Color Variations</p>
+      <div class="logo-variations-grid">
+        <div class="logo-var-card">
+          <div class="logo-var-swatch lv-swatch-dark">
+            <div class="lv-icon"></div>
+            <div class="lv-wordmark">Bishop <span>AI</span></div>
+          </div>
+          <div class="logo-var-info">
+            <p class="logo-var-title">Primary — Dark Background</p>
+            <p class="logo-var-desc">The canonical lockup. Use in all primary digital brand contexts.</p>
+          </div>
+        </div>
+        <div class="logo-var-card">
+          <div class="logo-var-swatch lv-swatch-light">
+            <div class="lv-icon"></div>
+            <div class="lv-wordmark">Bishop <span>AI</span></div>
+          </div>
+          <div class="logo-var-info">
+            <p class="logo-var-title">Reverse — Light Background</p>
+            <p class="logo-var-desc">For documents, slides, print materials, and light-mode applications.</p>
+          </div>
+        </div>
+        <div class="logo-var-card">
+          <div class="logo-var-swatch lv-swatch-mono-w">
+            <div class="lv-icon"></div>
+            <div class="lv-wordmark">Bishop <span>AI</span></div>
+          </div>
+          <div class="logo-var-info">
+            <p class="logo-var-title">Monochrome White</p>
+            <p class="logo-var-desc">For embossed, stamped, or contexts where single color is required on dark.</p>
+          </div>
+        </div>
+        <div class="logo-var-card">
+          <div class="logo-var-swatch lv-swatch-mono-d">
+            <div class="lv-icon"></div>
+            <div class="lv-wordmark">Bishop <span>AI</span></div>
+          </div>
+          <div class="logo-var-info">
+            <p class="logo-var-title">Monochrome Dark</p>
+            <p class="logo-var-desc">For engraved, foil, or single-color print requirements on light stock.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DO / DON'T -->
+      <div class="logo-rules-block">
+        <div class="logo-rule-panel">
+          <h3 class="do-label">✓ DO</h3>
+          <ul class="rule-list">
+            <li><div class="ri do">✓</div>Maintain clear space equal to the height of the 'B' in Bishop on all four sides.</li>
+            <li><div class="ri do">✓</div>Use only on approved backgrounds: Deep Navy, Off-White, Mid-Slate, or White.</li>
+            <li><div class="ri do">✓</div>Scale proportionally. Minimum 120px wide in digital; 25mm wide in print.</li>
+            <li><div class="ri do">✓</div>Use the wordmark + icon lockup as the primary form. Icon alone is permitted only as a secondary mark (favicon, avatar).</li>
+            <li><div class="ri do">✓</div>Apply the gold icon on dark backgrounds; apply the dark icon on light backgrounds.</li>
+          </ul>
+        </div>
+        <div class="logo-rule-panel">
+          <h3 class="dont-label">✕ DON'T</h3>
+          <ul class="rule-list">
+            <li><div class="ri dont">✕</div>Never stretch, compress, rotate, skew, or distort the logo in any direction.</li>
+            <li><div class="ri dont">✕</div>Never recolor the logo outside the four approved variations.</li>
+            <li><div class="ri dont">✕</div>Never add drop shadows, glows, outlines, gradients, or other effects.</li>
+            <li><div class="ri dont">✕</div>Never place the logo directly on busy photography without a solid color field backing.</li>
+            <li><div class="ri dont">✕</div>Never recreate, redraw, or approximate the logo — always use master files.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CONTEXT PLACEMENT TABLE -->
+      <p class="label" style="margin-bottom:1.25rem;">Context-Specific Placement</p>
+      <div class="logo-context-table">
+        <div class="ctx-table-header">
+          <span>Platform / Context</span>
+          <span>Variation to Use</span>
+          <span>Min. Size</span>
+          <span>Placement Guidance</span>
+        </div>
+        <div class="ctx-table-row">
+          <span class="ctx-platform">LinkedIn Profile Avatar</span>
+          <span><span class="ctx-tag">Icon Only · Dark BG</span></span>
+          <span>400×400 px</span>
+          <span>Icon centered, 20% padding on all sides</span>
+        </div>
+        <div class="ctx-table-row">
+          <span class="ctx-platform">LinkedIn Banner</span>
+          <span><span class="ctx-tag">Full Lockup · Dark BG</span></span>
+          <span>Lockup ~300px wide</span>
+          <span>Left-aligned, vertically centered, 48px from left edge</span>
+        </div>
+        <div class="ctx-table-row">
+          <span class="ctx-platform">Email Signature</span>
+          <span><span class="ctx-tag">Full Lockup · Light BG</span></span>
+          <span>160px wide</span>
+          <span>Top of signature block, left-aligned above name</span>
+        </div>
+        <div class="ctx-table-row">
+          <span class="ctx-platform">Deck — Title Slide</span>
+          <span><span class="ctx-tag">Full Lockup · Dark BG</span></span>
+          <span>200px wide</span>
+          <span>Bottom-right corner, 24px from edges</span>
+        </div>
+        <div class="ctx-table-row">
+          <span class="ctx-platform">Deck — Interior Slide</span>
+          <span><span class="ctx-tag">Icon Only · Dark BG</span></span>
+          <span>32px icon</span>
+          <span>Top-right corner, 16px from edges — subtle, consistent</span>
+        </div>
+        <div class="ctx-table-row">
+          <span class="ctx-platform">Website Header</span>
+          <span><span class="ctx-tag">Full Lockup · Dark BG</span></span>
+          <span>140px wide</span>
+          <span>Left-aligned in navbar, 24px from viewport edge</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR PALETTE -->
+  <section id="colours">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">02 — Color Palette</p>
+          <h2>The <span>Palette</span></h2>
+        </div>
+        <p class="section-desc">All colors sourced directly from bishopai.io's live CSS design tokens. Organized into a three-tier hierarchy. No existing colors were changed.</p>
+      </div>
+
+      <!-- TIER 1: PRIMARY -->
+      <div class="palette-tier">
+        <p class="palette-tier-label">Tier 1 — Primary Brand Colors</p>
+        <div class="palette-row">
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#000D1A;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Deep Navy</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#000D1A</p>
+                <p class="swatch-rgb">RGB 0 · 13 · 26</p>
+                <p class="swatch-cmyk">CMYK 100 · 50 · 0 · 90</p>
+              </div>
+              <p class="swatch-role">Page background · Primary dark surface</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#E8B84B;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Brand Gold</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#E8B84B</p>
+                <p class="swatch-rgb">RGB 232 · 184 · 75</p>
+                <p class="swatch-cmyk">CMYK 0 · 21 · 68 · 9</p>
+              </div>
+              <p class="swatch-role">Primary brand color · CTAs · Headlines · Logo icon</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#EDE9E2;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Warm White</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#EDE9E2</p>
+                <p class="swatch-rgb">RGB 237 · 233 · 226</p>
+                <p class="swatch-cmyk">CMYK 0 · 2 · 5 · 7</p>
+              </div>
+              <p class="swatch-role">Primary foreground text on dark backgrounds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 2: SECONDARY -->
+      <div class="palette-tier">
+        <p class="palette-tier-label">Tier 2 — Secondary Supporting Colors</p>
+        <div class="palette-row">
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#1BA8C8;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Teal</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#1BA8C8</p>
+                <p class="swatch-rgb">RGB 27 · 168 · 200</p>
+                <p class="swatch-cmyk">CMYK 87 · 16 · 0 · 22</p>
+              </div>
+              <p class="swatch-role">Secondary accent · Links · Data viz highlights</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#10131D;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Card Slate</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#10131D</p>
+                <p class="swatch-rgb">RGB 16 · 19 · 29</p>
+                <p class="swatch-cmyk">CMYK 45 · 34 · 0 · 89</p>
+              </div>
+              <p class="swatch-role">Card surfaces · Elevated content areas</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#1E2234;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Muted Surface</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#1E2234</p>
+                <p class="swatch-rgb">RGB 30 · 34 · 52</p>
+                <p class="swatch-cmyk">CMYK 42 · 35 · 0 · 80</p>
+              </div>
+              <p class="swatch-role">Section backgrounds · Table rows · Muted areas</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#252A3A;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Border</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#252A3A</p>
+                <p class="swatch-rgb">RGB 37 · 42 · 58</p>
+                <p class="swatch-cmyk">CMYK 36 · 28 · 0 · 77</p>
+              </div>
+              <p class="swatch-role">Dividers · Card borders · Input borders</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 3: ACCENT / NEUTRAL -->
+      <div class="palette-tier">
+        <p class="palette-tier-label">Tier 3 — Accent & Neutral Colors</p>
+        <div class="palette-row">
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#A89E8F;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Muted Tan</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#A89E8F</p>
+                <p class="swatch-rgb">RGB 168 · 158 · 143</p>
+                <p class="swatch-cmyk">CMYK 0 · 6 · 15 · 34</p>
+              </div>
+              <p class="swatch-role">Secondary body text · Captions · Metadata</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#C49528;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Gold Dark</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#C49528</p>
+                <p class="swatch-rgb">RGB 196 · 149 · 40</p>
+                <p class="swatch-cmyk">CMYK 0 · 24 · 80 · 23</p>
+              </div>
+              <p class="swatch-role">Gold hover / active state · Gold on light backgrounds</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-block" style="background:#EF4444;"></div>
+            <div class="swatch-info">
+              <p class="swatch-name">Error Red</p>
+              <div class="swatch-codes">
+                <p class="swatch-hex">#EF4444</p>
+                <p class="swatch-rgb">RGB 239 · 68 · 68</p>
+                <p class="swatch-cmyk">CMYK 0 · 72 · 72 · 6</p>
+              </div>
+              <p class="swatch-role">Errors · Destructive actions · Alerts only</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAPS FLAGGED -->
+      <div class="color-gaps-panel">
+        <p class="gap-panel-title">⚑ Identified Gaps — Suggested Additions (Not Changes)</p>
+        <div class="gap-list">
+          <div class="gap-item">
+            <span class="gap-pill">GAP 01</span>
+            <span><strong style="color:var(--fg);">Missing neutral gray for light mode body text.</strong> The existing palette has no mid-gray suitable for body copy on white/cream backgrounds. Suggested addition: <span style="font-family:var(--ff-mono);color:var(--gold);">#4A5568</span> (Slate Gray) for light-mode documents and slides.</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-pill">GAP 02</span>
+            <span><strong style="color:var(--fg);">No success/positive state color.</strong> No green accent exists in the palette. For data visualizations and success states, suggested addition: <span style="font-family:var(--ff-mono);color:var(--gold);">#22C55E</span> (Emerald Green) used sparingly, only for positive metrics.</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-pill">GAP 03</span>
+            <span><strong style="color:var(--fg);">Teal (#1BA8C8) at 4.5:1 contrast fails on dark navy.</strong> Do not use teal for body text on deep navy backgrounds. Use it only for links, accents, and decorative elements — or pair it with a light background where contrast is sufficient.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIGHT MODE PALETTE -->
+      <div class="palette-light-note">
+        <p class="plt-note-title" style="color:var(--light-text);">Light Mode — Document & Print Equivalents</p>
+        <p style="font-size:0.875rem;color:var(--light-sub);margin-bottom:1.25rem;line-height:1.65;">Use these values in Google Slides, Canva, email templates, printed materials, and any context with a white or light background.</p>
+        <div class="plt-swatches-light">
+          <div class="plt-sw">
+            <div class="plt-sw-block" style="background:#FAFAF8;border:1px solid #E2DDD6;"></div>
+            <div class="plt-sw-info">
+              <p class="plt-sw-name">Page White</p>
+              <p class="plt-sw-hex">#FAFAF8</p>
+            </div>
+          </div>
+          <div class="plt-sw">
+            <div class="plt-sw-block" style="background:#F2F0EB;"></div>
+            <div class="plt-sw-info">
+              <p class="plt-sw-name">Light Surface</p>
+              <p class="plt-sw-hex">#F2F0EB</p>
+            </div>
+          </div>
+          <div class="plt-sw">
+            <div class="plt-sw-block" style="background:#0F1420;"></div>
+            <div class="plt-sw-info">
+              <p class="plt-sw-name">Light Text</p>
+              <p class="plt-sw-hex">#0F1420</p>
+            </div>
+          </div>
+          <div class="plt-sw">
+            <div class="plt-sw-block" style="background:#C49528;"></div>
+            <div class="plt-sw-info">
+              <p class="plt-sw-name">Gold (Light)</p>
+              <p class="plt-sw-hex">#C49528</p>
+            </div>
+          </div>
+          <div class="plt-sw">
+            <div class="plt-sw-block" style="background:#1385A0;"></div>
+            <div class="plt-sw-info">
+              <p class="plt-sw-name">Teal (Light)</p>
+              <p class="plt-sw-hex">#1385A0</p>
+            </div>
+          </div>
+          <div class="plt-sw">
+            <div class="plt-sw-block" style="background:#4A5568;"></div>
+            <div class="plt-sw-info">
+              <p class="plt-sw-name">Body Gray †</p>
+              <p class="plt-sw-hex">#4A5568</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.6875rem;color:var(--light-sub);margin-top:0.75rem;">† = Suggested addition. Not currently in live site CSS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section id="typography">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">03 — Typography</p>
+          <h2>Type <span>System</span></h2>
+        </div>
+        <p class="section-desc">Three Google Fonts families sourced directly from bishopai.io. Poppins leads headings, Open Sans handles body, Montserrat serves UI labels and navigation.</p>
+      </div>
+
+      <div class="type-pair-grid">
+        <div class="type-card">
+          <p class="type-role">Primary — Headings & Display</p>
+          <p class="type-name">Poppins</p>
+          <p class="type-sample-head" style="font-family:'Poppins',sans-serif;">Activate AI.<br>Drive Revenue.</p>
+          <div class="type-weights-row">
+            <div class="tw-item"><div class="tw-sample" style="font-family:'Poppins',sans-serif;font-weight:400;">Regular</div><div class="tw-label">400</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-family:'Poppins',sans-serif;font-weight:500;">Medium</div><div class="tw-label">500</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-family:'Poppins',sans-serif;font-weight:600;">Semibold</div><div class="tw-label">600</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-family:'Poppins',sans-serif;font-weight:700;">Bold</div><div class="tw-label">700</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-family:'Poppins',sans-serif;font-weight:800;">ExtraBold</div><div class="tw-label">800</div></div>
+          </div>
+        </div>
+        <div class="type-card">
+          <p class="type-role">Secondary — Body & Paragraph</p>
+          <p class="type-name">Open Sans</p>
+          <p class="type-sample-body">Bishop AI helps businesses activate AI for revenue growth and better decision-making. We work at the intersection of AI, revenue operations, go-to-market strategy, and automation — building systems that produce measurable outcomes.</p>
+          <div class="type-weights-row">
+            <div class="tw-item"><div class="tw-sample" style="font-size:1rem;font-weight:300;">Light</div><div class="tw-label">300</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-size:1rem;font-weight:400;">Regular</div><div class="tw-label">400</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-size:1rem;font-weight:500;">Medium</div><div class="tw-label">500</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-size:1rem;font-weight:600;">Semibold</div><div class="tw-label">600</div></div>
+            <div class="tw-item"><div class="tw-sample" style="font-size:1rem;font-weight:700;">Bold</div><div class="tw-label">700</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="type-card" style="margin-bottom:1.25rem;">
+        <p class="type-role">Tertiary — UI, Labels & Navigation</p>
+        <p class="type-name">Montserrat</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.6875rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-low);">NAVIGATION LABEL</span>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.75rem;color:var(--gold);">Brand Kit · BKB-BA01</span>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:500;font-size:0.875rem;color:var(--fg);">Button Text</span>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.625rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--fg-low);">SECTION 01 — LOGO SYSTEM</span>
+        </div>
+      </div>
+
+      <!-- TYPE SCALE -->
+      <div class="type-scale-block">
+        <p class="type-scale-title">Full Type Scale — Heading & Body Hierarchy</p>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">Display</span><p class="scale-spec">72–96px · 800 wt · -0.03em tracking</p></div>
+          <p style="font-family:'Poppins',sans-serif;font-size:clamp(2.25rem,5vw,3.5rem);font-weight:800;color:var(--fg);line-height:0.95;letter-spacing:-0.03em;">Activate AI.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">H1</span><p class="scale-spec">48–64px · 700 wt · -0.02em</p></div>
+          <p style="font-family:'Poppins',sans-serif;font-size:clamp(1.75rem,4vw,2.625rem);font-weight:700;color:var(--fg);line-height:1.05;letter-spacing:-0.02em;">Revenue starts with the right system.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">H2</span><p class="scale-spec">32–40px · 700 wt · -0.01em</p></div>
+          <p style="font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--fg);line-height:1.15;">Why businesses choose Bishop AI</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">H3</span><p class="scale-spec">24px · 600 wt · 0em</p></div>
+          <p style="font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:600;color:var(--fg);line-height:1.35;">AI-Powered Go-To-Market Strategy</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">H4</span><p class="scale-spec">20px · 600 wt · 0em</p></div>
+          <p style="font-family:'Poppins',sans-serif;font-size:1.0625rem;font-weight:600;color:var(--fg);">Workflow Automation for Revenue Teams</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">H5</span><p class="scale-spec">16px · 600 wt · 0.01em</p></div>
+          <p style="font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--fg);">SDR Playbook Configuration</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">Body</span><p class="scale-spec">16px · 400 wt · 0 · LH 1.7</p></div>
+          <p style="font-size:1rem;color:var(--fg-mid);line-height:1.7;max-width:600px;">Bishop AI automates your business with AI so you don't have to. From intelligent workflow automation to enterprise AI training, we help companies grow faster and make better decisions.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">Body SM</span><p class="scale-spec">14px · 400 wt · 0 · LH 1.65</p></div>
+          <p style="font-size:0.875rem;color:var(--fg-mid);line-height:1.65;">Supporting copy, card descriptions, and secondary paragraph text.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">Caption</span><p class="scale-spec">12–13px · 400 wt</p></div>
+          <p style="font-size:0.8125rem;color:var(--fg-low);">Footnotes, image captions, metadata, timestamps — use sparingly.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-meta"><span class="scale-tag">Label</span><p class="scale-spec">11px · 700 wt · 0.18em UC</p></div>
+          <p style="font-family:'Montserrat',sans-serif;font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.8;">SECTION LABEL · EYEBROW TEXT</p>
+        </div>
+      </div>
+
+      <!-- FREE ALTERNATIVES -->
+      <div class="type-alts-panel">
+        <p class="type-alts-title">Free Alternatives for Google Slides, Canva & Print</p>
+        <div class="alts-grid">
+          <div class="alt-item">
+            <p class="alt-original">Replacing: Poppins</p>
+            <p class="alt-name">Nunito / Raleway</p>
+            <p class="alt-fallback">Available on Google Slides & Canva</p>
+            <p class="alt-platforms">Use for: Headings in presentations</p>
+          </div>
+          <div class="alt-item">
+            <p class="alt-original">Replacing: Open Sans</p>
+            <p class="alt-name">Lato / Source Sans 3</p>
+            <p class="alt-fallback">Available on Google Slides & Canva</p>
+            <p class="alt-platforms">Use for: Body copy in all documents</p>
+          </div>
+          <div class="alt-item">
+            <p class="alt-original">Replacing: Montserrat</p>
+            <p class="alt-name">Montserrat (same)</p>
+            <p class="alt-fallback">Available on Google Slides & Canva</p>
+            <p class="alt-platforms">Use for: Labels, navigation text</p>
+          </div>
+        </div>
+        <p style="font-size:0.8125rem;color:var(--teal);margin-top:1.25rem;">Note: All three brand fonts (Poppins, Open Sans, Montserrat) are available free on Google Fonts and are natively supported in Canva. No license required for commercial use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICONOGRAPHY -->
+  <section id="iconography">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">04 — Iconography & Illustration</p>
+          <h2>Visual <span>Style</span></h2>
+        </div>
+        <p class="section-desc">Icons and illustrations must feel cohesive with the overall brand — precise, modern, and purposeful. No clip art. No generic AI imagery.</p>
+      </div>
+
+      <div class="icon-spec-grid">
+        <div class="icon-spec-card">
+          <h3>Icon Weight & Style</h3>
+          <p>Use <strong style="color:var(--fg);">regular weight</strong> line icons (1.5–2px stroke). Avoid ultra-thin or excessively bold variants. Rounded line caps and joins. Never mix icon styles within a single design — pick one library and stick to it. Recommended: Lucide, Phosphor (Regular), or Heroicons (Outline).</p>
+        </div>
+        <div class="icon-spec-card">
+          <h3>Illustration Style</h3>
+          <p>Prefer <strong style="color:var(--fg);">abstract geometric graphics</strong> and data visualizations over literal illustrations. Node/graph diagrams, flow charts, and grid patterns work well with the brand aesthetic. Avoid: stock-photo AI imagery (glowing brains, humanoid robots), cartoonish illustrations, or overly ornate decorative elements.</p>
+        </div>
+        <div class="icon-spec-card">
+          <h3>Color in Icons</h3>
+          <p>Icons default to <strong style="color:var(--fg);">Warm White (#EDE9E2)</strong> on dark backgrounds. Use <strong style="color:var(--gold);">Brand Gold (#E8B84B)</strong> to call attention to a single key icon per composition. Use <strong style="color:var(--teal);">Teal (#1BA8C8)</strong> for secondary or supporting icons. Never use more than two icon colors in one layout.</p>
+        </div>
+      </div>
+
+      <!-- ICON EXAMPLES (SVG inline) -->
+      <p class="label" style="margin-bottom:1.25rem;">Icon Examples — Approved Style</p>
+      <div class="icon-preview-row">
+        <div class="icon-preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+          <p class="icon-preview-label">Layers / Strategy</p>
+        </div>
+        <div class="icon-preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EDE9E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <p class="icon-preview-label">Activity / Revenue</p>
+        </div>
+        <div class="icon-preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1BA8C8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+          </svg>
+          <p class="icon-preview-label">AI / Automation</p>
+        </div>
+        <div class="icon-preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EDE9E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+          <p class="icon-preview-label">Presentation / Deck</p>
+        </div>
+        <div class="icon-preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <p class="icon-preview-label">Team / Partnership</p>
+        </div>
+        <div class="icon-preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1BA8C8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          <p class="icon-preview-label">Revenue / MRR</p>
+        </div>
+      </div>
+
+      <div class="icon-donts-row">
+        <div class="icon-do-panel">
+          <p class="idp-title do">Use icons that…</p>
+          <ul class="idp-list">
+            <li>Are functional and communicate a clear concept</li>
+            <li>Use consistent stroke weights across the layout</li>
+            <li>Align with the business context (revenue, ops, AI, data)</li>
+            <li>Come from a single icon family per design</li>
+            <li>Are used at multiples of 16px (16, 24, 32, 48px)</li>
+          </ul>
+        </div>
+        <div class="icon-dont-panel">
+          <p class="idp-title dont">Never use icons that…</p>
+          <ul class="idp-list">
+            <li>Depict humanoid robots, cyborgs, or glowing brains</li>
+            <li>Look like clip art or low-resolution raster graphics</li>
+            <li>Mix styles (e.g., filled + outline in same layout)</li>
+            <li>Are overly ornate or decorative with no functional purpose</li>
+            <li>Use colors outside the brand palette</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE & TONE -->
+  <section id="voice">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">05 — Voice & Tone</p>
+          <h2>How We <span>Speak</span></h2>
+        </div>
+        <p class="section-desc">Bishop AI's voice is the same in every channel — only the tone shifts. Professional but human. Direct but not cold. Results-oriented but never arrogant.</p>
+      </div>
+
+      <!-- VOICE ATTRIBUTES -->
+      <div class="voice-attrs-grid">
+        <div class="voice-attr-cell">
+          <p class="voice-attr-word">Professional</p>
+          <p class="voice-attr-sub">Not corporate. Not stiff.</p>
+          <p class="voice-attr-desc">Write like a trusted expert who earns credibility through substance, not formality. Skip the jargon. Say what you mean.</p>
+        </div>
+        <div class="voice-attr-cell">
+          <p class="voice-attr-word">Direct</p>
+          <p class="voice-attr-sub">Get to the point, always.</p>
+          <p class="voice-attr-desc">Lead with the outcome. Cut filler words. If a sentence doesn't add value, remove it. Every sentence earns its place.</p>
+        </div>
+        <div class="voice-attr-cell">
+          <p class="voice-attr-word">Results-Oriented</p>
+          <p class="voice-attr-sub">Tie everything to outcomes.</p>
+          <p class="voice-attr-desc">Always connect features to impact. Don't describe what AI does — describe what it produces: more pipeline, less churn, faster ramp.</p>
+        </div>
+        <div class="voice-attr-cell">
+          <p class="voice-attr-word">Collaborative</p>
+          <p class="voice-attr-sub">Human + AI together.</p>
+          <p class="voice-attr-desc">Emphasize partnership, not replacement. AI amplifies human capability — it doesn't remove the human from the equation.</p>
+        </div>
+      </div>
+
+      <!-- ON-BRAND / OFF-BRAND EXAMPLES -->
+      <div class="voice-examples-block">
+        <p class="voice-examples-title">Voice in Action — Off-Brand vs. On-Brand</p>
+
+        <div class="voice-example-pair">
+          <p class="vep-context">Context: Introducing Bishop AI on LinkedIn</p>
+          <div class="vep-cols">
+            <div class="vep-col vep-off">
+              <span class="vep-badge off">✕ Off-Brand</span>
+              <p>"We leverage cutting-edge artificial intelligence solutions to synergize your go-to-market ecosystems and unlock unprecedented value creation opportunities for your organization."</p>
+            </div>
+            <div class="vep-col vep-on">
+              <span class="vep-badge on">✓ On-Brand</span>
+              <p>"Bishop AI builds AI systems that close more deals, cut churn, and make your revenue team run faster. We automate the work. You capture the results."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="voice-example-pair">
+          <p class="vep-context">Context: Cold outreach email opening line</p>
+          <div class="vep-cols">
+            <div class="vep-col vep-off">
+              <span class="vep-badge off">✕ Off-Brand</span>
+              <p>"Hey! 👋 I was just scrolling LinkedIn and I had to reach out — your company is doing SO many amazing things and I think we could be a great fit!!!"</p>
+            </div>
+            <div class="vep-col vep-on">
+              <span class="vep-badge on">✓ On-Brand</span>
+              <p>"I noticed [Company] is scaling its outbound — most teams your size lose 40% of pipeline to slow follow-up and manual handoffs. We fix that."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="voice-example-pair">
+          <p class="vep-context">Context: Deck headline describing AI automation</p>
+          <div class="vep-cols">
+            <div class="vep-col vep-off">
+              <span class="vep-badge off">✕ Off-Brand</span>
+              <p>"Harnessing the transformative power of next-generation AI to revolutionize your entire business operation from the ground up."</p>
+            </div>
+            <div class="vep-col vep-on">
+              <span class="vep-badge on">✓ On-Brand</span>
+              <p>"Automate your pipeline. Free your team. Grow faster."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TONE BY CHANNEL -->
+      <div class="voice-context-grid">
+        <div class="voice-ctx-card">
+          <h3>LinkedIn Posts</h3>
+          <p class="ctx-desc">Confident, educational, slightly conversational. Lead with insight or a specific outcome metric.</p>
+          <div class="ctx-examples">
+            <p class="ctx-ex">Most SDR teams spend 60% of their day on manual tasks AI can handle. Here's the workflow we built to fix it.</p>
+            <p class="ctx-ex">Pipeline isn't a volume problem. It's a qualification problem. Here's how AI changes that equation.</p>
+            <p class="ctx-ex">$1.2M recovered from churn risk in Q1. The system that made it happen — and how you can build it.</p>
+          </div>
+        </div>
+        <div class="voice-ctx-card">
+          <h3>Sales Decks</h3>
+          <p class="ctx-desc">Authoritative, data-backed, outcome-focused. Every slide earns the next.</p>
+          <div class="ctx-examples">
+            <p class="ctx-ex">Revenue teams using AI-assisted workflows close 34% more deals with the same headcount.</p>
+            <p class="ctx-ex">We build the GTM infrastructure. You build the revenue.</p>
+            <p class="ctx-ex">Three clients added $2M+ ARR within 90 days of implementation.</p>
+          </div>
+        </div>
+        <div class="voice-ctx-card">
+          <h3>Email Outreach</h3>
+          <p class="ctx-desc">Personal, direct, value-first. Open with their problem, not your product.</p>
+          <div class="ctx-examples">
+            <p class="ctx-ex">Noticed you're scaling outbound — most teams at this stage stall on lead quality. We've solved that for six companies this quarter.</p>
+            <p class="ctx-ex">I built an AI workflow that saved one of our clients 20 hours per week on manual ops. Worth 15 minutes?</p>
+            <p class="ctx-ex">Your RevOps stack has gaps. I know which ones — and I can show you how to close them.</p>
+          </div>
+        </div>
+        <div class="voice-ctx-card">
+          <h3>Partner Materials</h3>
+          <p class="ctx-desc">Professional, clear, collaborative. Lead with mutual value and clear scope.</p>
+          <div class="ctx-examples">
+            <p class="ctx-ex">Bishop AI integrates directly with your existing GTM stack — zero disruption, full automation.</p>
+            <p class="ctx-ex">Our implementation process is transparent, time-boxed, and built for your team to own post-launch.</p>
+            <p class="ctx-ex">Partners choose us because we deliver systems that work — and documentation that makes handoff clean.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGING -->
+  <section id="messaging">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">06 — Messaging Framework</p>
+          <h2>What We <span>Say</span></h2>
+        </div>
+        <p class="section-desc">The positioning statement, brand narrative, and approved terminology that define how Bishop AI presents itself in all markets.</p>
+      </div>
+
+      <div class="positioning-block">
+        <span class="pos-label">Positioning Statement</span>
+        <p class="pos-statement">Bishop AI helps businesses activate AI for revenue growth and better decision-making.</p>
+        <p class="pos-narrative">We work at the intersection of AI, revenue operations, go-to-market strategy, and automation — building practical systems that produce measurable outcomes. We are not trend-chasers. We are architects of capability.</p>
+      </div>
+
+      <div class="terms-grid">
+        <div class="terms-panel">
+          <h3 class="use-label">✓ Preferred Terms & Language</h3>
+          <div class="terms-cloud">
+            <span class="term-tag use">AI</span>
+            <span class="term-tag use">Revenue</span>
+            <span class="term-tag use">Automation</span>
+            <span class="term-tag use">Go-to-Market (GTM)</span>
+            <span class="term-tag use">Prompt Engineering</span>
+            <span class="term-tag use">RevOps</span>
+            <span class="term-tag use">Valuation</span>
+            <span class="term-tag use">Churn</span>
+            <span class="term-tag use">Workflows</span>
+            <span class="term-tag use">Human Capability</span>
+            <span class="term-tag use">Decision-Making</span>
+            <span class="term-tag use">Strategy</span>
+            <span class="term-tag use">Systems</span>
+            <span class="term-tag use">Playbooks</span>
+            <span class="term-tag use">Activate</span>
+            <span class="term-tag use">Amplify</span>
+            <span class="term-tag use">Align</span>
+            <span class="term-tag use">Architect</span>
+            <span class="term-tag use">SQLs</span>
+            <span class="term-tag use">MRR</span>
+            <span class="term-tag use">Pipeline</span>
+            <span class="term-tag use">SDR</span>
+            <span class="term-tag use">AE</span>
+            <span class="term-tag use">BDR</span>
+            <span class="term-tag use">MEDDIC</span>
+          </div>
+        </div>
+        <div class="terms-panel">
+          <h3 class="avoid-label">✕ Avoid These Approaches</h3>
+          <div class="terms-cloud">
+            <span class="term-tag avoid">Disruptive</span>
+            <span class="term-tag avoid">Revolutionary</span>
+            <span class="term-tag avoid">Game-changing</span>
+            <span class="term-tag avoid">Bleeding-edge</span>
+            <span class="term-tag avoid">Unprecedented</span>
+            <span class="term-tag avoid">Leverage synergies</span>
+            <span class="term-tag avoid">AI will replace you</span>
+            <span class="term-tag avoid">The future is here</span>
+            <span class="term-tag avoid">Unlock potential</span>
+            <span class="term-tag avoid">Transform everything</span>
+            <span class="term-tag avoid">Vague ROI promises</span>
+            <span class="term-tag avoid">We're different!</span>
+            <span class="term-tag avoid">Best-in-class</span>
+            <span class="term-tag avoid">10x your business</span>
+            <span class="term-tag avoid">Fear of missing out</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN APPLICATIONS -->
+  <section id="applications">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">07 — Design Applications</p>
+          <h2>Brand in <span>Action</span></h2>
+        </div>
+        <p class="section-desc">Annotated mockups showing the brand kit applied to Bishop AI's four primary touchpoints. Each annotation identifies the exact brand element in use.</p>
+      </div>
+
+      <div class="app-examples-grid">
+        <!-- LinkedIn Post -->
+        <div class="app-mockup">
+          <div class="app-mockup-header">
+            <div class="app-mockup-dot" style="background:#EF4444;"></div>
+            <div class="app-mockup-dot" style="background:#FBBF24;"></div>
+            <div class="app-mockup-dot" style="background:#4ADE80;"></div>
+            <p class="app-mockup-title">LinkedIn Post Mockup</p>
+          </div>
+          <div class="app-mockup-body" style="background:#141720;">
+            <div class="li-post">
+              <div class="li-post-header">
+                <div class="li-avatar">B</div>
+                <div class="li-info">
+                  <h4>Bishop AI</h4>
+                  <p>AI Automation & Revenue Growth · 1st</p>
+                </div>
+              </div>
+              <p class="li-body"><strong>Pipeline isn't a volume problem.</strong> It's a qualification problem.<br><br>We built an AI workflow that scored 4,200 leads in 6 minutes — here's what happened to win rate when we deployed it.</p>
+              <div class="li-stat-card">
+                <div class="li-stat-num">+34%</div>
+                <div class="li-stat-label">Increase in SQL conversion rate · 90 days post-deployment</div>
+              </div>
+              <div class="li-tags">
+                <span class="li-tag">#RevOps</span>
+                <span class="li-tag">#GTM</span>
+                <span class="li-tag">#AIAutomation</span>
+                <span class="li-tag">#Pipeline</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-annotation">
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#E8B84B;"></div>Gold for stat number — Poppins 800 · #E8B84B</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#1BA8C8;"></div>Teal for hashtag pills — rgba(27,168,200,0.1) bg</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#EDE9E2;"></div>Body text — Open Sans 400 · #EDE9E2 / #A89E8F</div>
+          </div>
+        </div>
+
+        <!-- Sales Deck Title Slide -->
+        <div class="app-mockup">
+          <div class="app-mockup-header">
+            <div class="app-mockup-dot" style="background:#EF4444;"></div>
+            <div class="app-mockup-dot" style="background:#FBBF24;"></div>
+            <div class="app-mockup-dot" style="background:#4ADE80;"></div>
+            <p class="app-mockup-title">Sales Deck — Title Slide</p>
+          </div>
+          <div class="app-mockup-body" style="background:#0A0F1A;padding:1rem;">
+            <div class="deck-slide">
+              <div class="deck-grid-bg"></div>
+              <div>
+                <div class="deck-badge">Confidential · Q3 2025</div>
+              </div>
+              <div>
+                <p class="deck-heading">Activate <span>AI</span>.<br>Drive Revenue.</p>
+                <p class="deck-sub">Bishop AI — Go-To-Market Automation for Revenue Teams</p>
+              </div>
+              <div class="deck-logo">
+                <div class="deck-logo-icon"></div>
+                <span class="deck-logo-text">Bishop <span>AI</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="app-annotation">
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#E8B84B;"></div>Headline accent word — Poppins 800 · Gold #E8B84B</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#252A3A;"></div>Grid background — rgba(232,184,75,0.03) · #000D1A base</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#ffffff;"></div>Top accent bar — linear-gradient gold→teal, 2px height</div>
+          </div>
+        </div>
+
+        <!-- Email Signature -->
+        <div class="app-mockup">
+          <div class="app-mockup-header">
+            <div class="app-mockup-dot" style="background:#EF4444;"></div>
+            <div class="app-mockup-dot" style="background:#FBBF24;"></div>
+            <div class="app-mockup-dot" style="background:#4ADE80;"></div>
+            <p class="app-mockup-title">Email Signature Mockup</p>
+          </div>
+          <div class="app-mockup-body" style="background:#F5F3EF;">
+            <div class="email-sig">
+              <div class="sig-divider"></div>
+              <div class="sig-row">
+                <div class="sig-icon-block">
+                  <div class="sig-icon"></div>
+                </div>
+                <div>
+                  <p class="sig-name">Jordan Ellis</p>
+                  <p class="sig-title">Head of Revenue Operations · Bishop AI</p>
+                  <p class="sig-contact">jordan@bishopai.io &nbsp;|&nbsp; +1 (555) 000-1234</p>
+                  <p class="sig-url">bishopai.io</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="app-annotation">
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#E8B84B;"></div>Top divider bar — Gold→Teal gradient · 2px · full width</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#C49528;"></div>Title text — Gold Dark #C49528 · Montserrat 600</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#1BA8C8;"></div>URL color — Teal #1BA8C8 · monospace font</div>
+          </div>
+        </div>
+
+        <!-- Website Hero Section -->
+        <div class="app-mockup">
+          <div class="app-mockup-header">
+            <div class="app-mockup-dot" style="background:#EF4444;"></div>
+            <div class="app-mockup-dot" style="background:#FBBF24;"></div>
+            <div class="app-mockup-dot" style="background:#4ADE80;"></div>
+            <p class="app-mockup-title">Website Hero Section</p>
+          </div>
+          <div class="app-mockup-body" style="background:#05091A;padding:1rem;">
+            <div class="web-hero">
+              <div class="web-nav-bar">
+                <div class="web-nav-logo">
+                  <div class="web-nav-icon"></div>
+                  <span class="web-nav-text">Bishop <span>AI</span></span>
+                </div>
+                <div class="web-nav-cta">Get Started</div>
+              </div>
+              <div class="web-hero-tag">AI Automation & Revenue Growth</div>
+              <p class="web-hero-h1">Activate AI.<br><span>Grow Revenue.</span></p>
+              <p class="web-hero-sub">From intelligent workflow automation to GTM strategy, Bishop AI helps revenue teams move faster and close more.</p>
+              <div class="web-hero-ctas">
+                <div class="web-cta-primary">Book a Call</div>
+                <div class="web-cta-ghost">See How It Works</div>
+              </div>
+            </div>
+          </div>
+          <div class="app-annotation">
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#E8B84B;"></div>CTA button — #E8B84B bg · #000 text · Montserrat 700</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#E8B84B;"></div>H1 accent span — Poppins 800 · Gold #E8B84B</div>
+            <div class="app-anno-row"><div class="app-anno-dot" style="background:#252A3A;"></div>Ghost button — border #252A3A · Open Sans 600</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NORMS -->
+  <section id="norms">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">08 — Brand Norms</p>
+          <h2>The <span>Rules</span></h2>
+        </div>
+        <p class="section-desc">Firm rules specific enough to follow without interpretation. No exceptions without explicit approval from brand leadership.</p>
+      </div>
+
+      <div class="norms-grid">
+        <div class="norm-card">
+          <h3>Color Usage Norms</h3>
+          <div class="norm-rules">
+            <div class="norm-rule"><strong>Gold (#E8B84B)</strong> is the primary brand color. Use for: H1–H2 headline accents, primary CTAs, logo icon, key data callouts. Limit to 1–2 focal points per layout.</div>
+            <div class="norm-rule"><strong>Teal (#1BA8C8)</strong> is the secondary accent. Use for: links, secondary icons, chart lines, supporting data points. Never use for body text on dark navy — contrast ratio fails WCAG AA.</div>
+            <div class="norm-rule"><strong>Deep Navy (#000D1A)</strong> is the canonical background in all primary brand contexts. Never replace with pure black (#000) or any other dark color.</div>
+            <div class="norm-rule"><strong>Error Red (#EF4444)</strong> is reserved exclusively for errors, destructive actions, and alerts. It is never decorative.</div>
+            <div class="norm-rule">Minimum contrast ratio for body text: <strong>4.5:1 (WCAG AA)</strong>. Warm White on Deep Navy: 15.8:1 ✓. Gold on Deep Navy: 8.1:1 ✓. Teal on Deep Navy: 3.9:1 — do not use for text.</div>
+          </div>
+        </div>
+
+        <div class="norm-card">
+          <h3>Typography Norms</h3>
+          <div class="norm-rules">
+            <div class="norm-rule"><strong>H1</strong> is used for page titles only — one per page. Never use H1 for section headers or decorative text.</div>
+            <div class="norm-rule"><strong>H2</strong> is for primary section headers. One H2 per section. Poppins 700, ~32–40px.</div>
+            <div class="norm-rule"><strong>Body text minimum: 16px (1rem)</strong>, Open Sans 400, line-height 1.65–1.75. Never drop below 14px for sustained reading copy.</div>
+            <div class="norm-rule"><strong>Maximum line length: 70–75 characters</strong> (approximately 600px at 16px). Longer lines harm readability and are a norms violation.</div>
+            <div class="norm-rule">Never use more than <strong>two typeface families</strong> in a single composition (e.g., Poppins + Open Sans). Montserrat is permitted as a third only for navigation/label elements.</div>
+            <div class="norm-rule">Letter spacing for label text (uppercase): minimum <strong>0.14em</strong>. Body text: <strong>0em</strong> (never tighten body copy).</div>
+          </div>
+        </div>
+
+        <div class="norm-card">
+          <h3>Logo Norms</h3>
+          <div class="norm-rules">
+            <div class="norm-rule">Clear space = the height of the capital 'B' in "Bishop" on all four sides. No element may intrude on this zone.</div>
+            <div class="norm-rule">Minimum digital size: <strong>120px wide (full lockup)</strong>, 32px wide (icon-only). Minimum print size: 25mm wide (lockup), 8mm (icon-only).</div>
+            <div class="norm-rule">The logo must never be recreated, redrawn, or approximated. Always use master vector files.</div>
+            <div class="norm-rule">On light backgrounds, always use the Light Background variation with the dark icon. Never use the gold icon on white — it fails contrast standards.</div>
+          </div>
+        </div>
+
+        <div class="norm-card">
+          <h3>Imagery Norms</h3>
+          <div class="norm-rules">
+            <div class="norm-rule">Bishop AI does not use generic stock photography of people in offices, handshakes, or glowing laptop screens.</div>
+            <div class="norm-rule">Preferred imagery: abstract data visualizations, node/network diagrams, geometric graphics, dashboard screenshots with real data, and genuine team photography (candid, not staged).</div>
+            <div class="norm-rule">If photography is used, apply a <strong>dark duotone overlay</strong> using Deep Navy (#000D1A) and Brand Gold (#E8B84B) at 40% opacity to maintain brand consistency.</div>
+            <div class="norm-rule">All images must be high resolution: minimum <strong>2x (retina)</strong> for digital, minimum <strong>300 DPI</strong> for print.</div>
+            <div class="norm-rule">Never use AI-generated imagery of humanoid robots, cyborgs, or literal "brain = AI" metaphors. These are specifically prohibited.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTRAST TABLE -->
+      <div style="margin-top:2rem;background:var(--card-2);border:1px solid var(--border);border-radius:var(--r-md);padding:2rem;">
+        <p style="font-family:var(--ff-ui);font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-low);margin-bottom:1rem;">Accessibility — Color Contrast Reference</p>
+        <table class="contrast-table">
+          <thead>
+            <tr>
+              <th>Foreground</th>
+              <th>Background</th>
+              <th>Ratio</th>
+              <th>WCAG AA (4.5:1)</th>
+              <th>Use For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Warm White #EDE9E2</td>
+              <td>Deep Navy #000D1A</td>
+              <td>15.8:1</td>
+              <td class="contrast-pass">✓ PASS</td>
+              <td>Primary body text on dark bg</td>
+            </tr>
+            <tr>
+              <td>Brand Gold #E8B84B</td>
+              <td>Deep Navy #000D1A</td>
+              <td>8.1:1</td>
+              <td class="contrast-pass">✓ PASS</td>
+              <td>Headlines, CTAs, logo on dark bg</td>
+            </tr>
+            <tr>
+              <td>Teal #1BA8C8</td>
+              <td>Deep Navy #000D1A</td>
+              <td>3.9:1</td>
+              <td class="contrast-warn">⚑ FAIL body</td>
+              <td>Decorative/icons only — not text</td>
+            </tr>
+            <tr>
+              <td>Dark Text #0F1420</td>
+              <td>Page White #FAFAF8</td>
+              <td>18.1:1</td>
+              <td class="contrast-pass">✓ PASS</td>
+              <td>Light mode body text</td>
+            </tr>
+            <tr>
+              <td>Gold Dark #C49528</td>
+              <td>Page White #FAFAF8</td>
+              <td>4.7:1</td>
+              <td class="contrast-pass">✓ PASS</td>
+              <td>Gold accents on light backgrounds</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDENTITY & VALUES -->
+  <section id="identity">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <p class="label">09 — Brand Identity & Core Values</p>
+          <h2>Who We <span>Are</span></h2>
+        </div>
+        <p class="section-desc">The principles that govern every decision — from color choices to the words we put in a cold email. These aren't aspirational. They're operational.</p>
+      </div>
+
+      <div class="identity-grid" style="margin-bottom:2rem;">
+        <div class="identity-values-grid">
+          <div class="iv-card">
+            <span class="iv-num">01</span>
+            <p class="iv-phrase">Activate, Don't Automate for Its Own Sake</p>
+            <p class="iv-desc">Every AI system we build must activate measurable revenue outcomes. Technology that doesn't move a metric doesn't belong in the stack.</p>
+            <div class="iv-accent"></div>
+          </div>
+          <div class="iv-card">
+            <span class="iv-num">02</span>
+            <p class="iv-phrase">Amplify Human Capability</p>
+            <p class="iv-desc">AI works beside people, not instead of them. We build systems that make humans faster, smarter, and more effective — never redundant.</p>
+            <div class="iv-accent"></div>
+          </div>
+          <div class="iv-card">
+            <span class="iv-num">03</span>
+            <p class="iv-phrase">Architect for Ownership</p>
+            <p class="iv-desc">Every system we build is documented, transferable, and owned by the client. We don't create dependency. We create capability.</p>
+            <div class="iv-accent"></div>
+          </div>
+          <div class="iv-card">
+            <span class="iv-num">04</span>
+            <p class="iv-phrase">Align Strategy with Execution</p>
+            <p class="iv-desc">GTM strategy without implementation is a slide deck. Implementation without strategy is wasted automation. We do both — and they must agree.</p>
+            <div class="iv-accent"></div>
+          </div>
+        </div>
+
+        <div class="identity-narrative">
+          <span class="pos-label">Brand Narrative</span>
+          <blockquote>"Bishop AI helps businesses activate AI for revenue growth and better decision-making."</blockquote>
+          <p>This is not a tagline. It is the operational mandate. Bishop AI works at the intersection of AI, revenue operations, go-to-market strategy, and automation. Every engagement produces systems — not recommendations. Every system produces results — not reports.</p>
+          <br>
+          <p>The brand exists to communicate capability without hype. In an industry full of promises about what AI will do someday, Bishop AI speaks only about what it has already done and what it will do on a defined timeline. Professional. Direct. Results-oriented. Collaborative.</p>
+          <br>
+          <p>Bishop AI is not a trend-chaser. It is a trusted advisor who delivers measurable outcomes — and the documentation to prove it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-icon"></div>
+        <span class="footer-wordmark">Bishop <span>AI</span></span>
+      </div>
+      <p class="footer-meta">Official Brand Kit · bishopai.io · For internal and partner use · Version 1.0 · June 2025</p>
+      <span class="footer-session">BKB-BA01</span>
+    </div>
+  </footer>
+
+</body>
+</html>

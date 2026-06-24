@@ -1,0 +1,6 @@
+[submodule "autoresearch"]
+	path = autoresearch
+	url = https://github.com/jsegov/autoresearch-win-rtx
+[submodule "context-mode"]
+	path = context-mode
+	url = https://github.com/mksglu/context-mode.git

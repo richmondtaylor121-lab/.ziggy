@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTM Automation &amp; RevOps Blog | Bishop AI</title>
+  <meta name="description" content="Read expert insights on B2B GTM systems, Salesforce automation, n8n workflows, and practical AI applications. Download the State of AI 2025 report.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Skip to Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVIGATION HEADER START -->
+  <header class="header-nav">
+    <div class="container header-nav__inner">
+      <a href="index.html" class="bishop-logo" aria-label="Bishop AI Homepage">
+        <div class="bishop-logo__icon" aria-hidden="true"></div>
+        <span>Bishop</span>AI
+      </a>
+      
+      <button class="header-nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="header-nav__toggle-box">
+          <span class="header-nav__toggle-inner"></span>
+        </span>
+      </button>
+
+      <nav class="header-nav__menu" id="nav-menu">
+        <a href="index.html" class="header-nav__link">Home</a>
+        <a href="services.html" class="header-nav__link">Services</a>
+        <a href="about.html" class="header-nav__link">About</a>
+        <a href="cases.html" class="header-nav__link">Case Studies</a>
+        <a href="blog.html" class="header-nav__link header-nav__link--active">Blog</a>
+        <a href="partners.html" class="header-nav__link">Partners &amp; Tools</a>
+        <a href="faq.html" class="header-nav__link">FAQ</a>
+        <a href="contact.html" class="header-nav__link">Contact</a>
+        <a href="contact.html#booking" class="btn btn--primary btn--sm header-nav__cta">Book Call</a>
+      </nav>
+    </div>
+  </header>
+  <!-- NAVIGATION HEADER END -->
+
+  <main id="main-content">
+    
+    <!-- BLOG INTRO START -->
+    <section class="section">
+      <div class="bg-grid"></div>
+      <div class="bg-glow bg-glow--top-right"></div>
+      
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Operational Library</span>
+          <h1>GTM and Revenue Operations Insights</h1>
+          <p>No high-level fluff. We write practical documentation, case reviews, and architectural blueprints explaining how we build robust automation engines.</p>
+        </div>
+      </div>
+    </section>
+    <!-- BLOG INTRO END -->
+
+    <!-- FEATURED REPORT START -->
+    <section id="report" class="section section--muted">
+      <div class="container">
+        <div class="blog-featured">
+          <div>
+            <span class="blog-featured__badge">Cornerstone Resource</span>
+            <h2 style="margin-bottom: 1.5rem;">The State of AI 2025: B2B Revenue Operations Report</h2>
+            <p>Our comprehensive research report gates B2B operational intelligence. We analyzed over 200 growth-stage CRM frameworks and n8n middleware structures to map where revenue leaks, which tools are bloated, and how top-tier consulting firms are applying agentic models to sales pipelines.</p>
+            <p>Download the full PDF to audit your own system loops and design a secure operational roadmap.</p>
+          </div>
+          
+          <div class="card" style="background-color: var(--card-elevated);">
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem; color: var(--gold);">Get the Free Report</h3>
+            
+            <!-- Salesforce and email marketing lead capture integration comment -->
+            <!-- 
+              CONNECT TO EMAIL MARKETING TOOL (e.g. HubSpot, Mailchimp, ConvertKit):
+              Set action="https://your-endpoint.com/lead-capture" and method="POST"
+              Ensure input names match your CRM form fields.
+            -->
+            <form data-validate action="contact.html" method="GET">
+              <div class="form-group">
+                <label for="lead-name" class="form-label">Full Name</label>
+                <input type="text" id="lead-name" name="name" class="form-control" placeholder="Richmond Taylor" required>
+                <span class="form-error-msg">Please enter your name.</span>
+              </div>
+              
+              <div class="form-group">
+                <label for="lead-email" class="form-label">Business Email</label>
+                <input type="email" id="lead-email" name="email" class="form-control" placeholder="richmond@bishopai.io" required>
+                <span class="form-error-msg">Please enter a valid business email.</span>
+              </div>
+              
+              <button type="submit" class="btn btn--primary" style="width: 100%;">Download Report</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FEATURED REPORT END -->
+
+    <!-- BLOG ARCHIVE START -->
+    <section class="section" data-tab-group>
+      <div class="container">
+        
+        <!-- Category Filter Tabs -->
+        <nav class="tab-nav" aria-label="Blog categories">
+          <button class="tab-btn tab-btn--active" data-tab-target="all">All Articles</button>
+          <button class="tab-btn" data-tab-target="automation">Automation</button>
+          <button class="tab-btn" data-tab-target="gtm">GTM Strategy</button>
+          <button class="tab-btn" data-tab-target="revops">RevOps</button>
+          <button class="tab-btn" data-tab-target="strategy">AI Strategy</button>
+          <button class="tab-btn" data-tab-target="training">Training</button>
+        </nav>
+
+        <!-- Articles Grid -->
+        <div class="grid-3">
+          
+          <!-- Article 1: n8n pipelines -->
+          <article class="card tab-content tab-content--active" data-tab-content="automation" style="background-color: var(--card-elevated);">
+            <div class="blog-post">
+              <div class="blog-post__meta">
+                <span class="blog-post__category">Automation</span>
+                <span>June 20, 2026</span>
+              </div>
+              <h3 class="blog-post__title">Architecting n8n Workflow Pipelines for HubSpot CRM Syncing</h3>
+              <p class="blog-post__excerpt">A detailed walkthrough showing how we build event-driven middleware to sync contact statuses without relying on custom server infrastructure.</p>
+              <a href="contact.html#booking" class="blog-post__link">Schedule Audit</a>
+            </div>
+          </article>
+          
+          <!-- Article 2: SQL routing -->
+          <article class="card tab-content tab-content--active" data-tab-content="revops" style="background-color: var(--card-elevated);">
+            <div class="blog-post">
+              <div class="blog-post__meta">
+                <span class="blog-post__category">RevOps</span>
+                <span>June 15, 2026</span>
+              </div>
+              <h3 class="blog-post__title">Reducing Speed-to-Lead: Integrating Chilipiper and Salesforce Rules</h3>
+              <p class="blog-post__excerpt">How commercial real estate firms and startups route high-value leads dynamically to regional agents in under 3 minutes.</p>
+              <a href="contact.html#booking" class="blog-post__link">Schedule Audit</a>
+            </div>
+          </article>
+
+          <!-- Article 3: GTM messaging -->
+          <article class="card tab-content tab-content--active" data-tab-content="gtm" style="background-color: var(--card-elevated);">
+            <div class="blog-post">
+              <div class="blog-post__meta">
+                <span class="blog-post__category">GTM Strategy</span>
+                <span>June 10, 2026</span>
+              </div>
+              <h3 class="blog-post__title">Why Hyper-Personalization Outbound is Failing in B2B Startups</h3>
+              <p class="blog-post__excerpt">An analysis of database decay and why generic AI prompt sequences degrade domain reputations and SDR response rates.</p>
+              <a href="contact.html#booking" class="blog-post__link">Schedule Audit</a>
+            </div>
+          </article>
+
+          <!-- Article 4: AI Auditing -->
+          <article class="card tab-content tab-content--active" data-tab-content="strategy" style="background-color: var(--card-elevated);">
+            <div class="blog-post">
+              <div class="blog-post__meta">
+                <span class="blog-post__category">AI Strategy</span>
+                <span>June 05, 2026</span>
+              </div>
+              <h3 class="blog-post__title">The Operational AI Audit: Finding Data Leakage in Your GTM Stack</h3>
+              <p class="blog-post__excerpt">Learn how we analyze database systems to locate double subscriptions, missing APIs, and administrative bottlenecks.</p>
+              <a href="contact.html#booking" class="blog-post__link">Schedule Audit</a>
+            </div>
+          </article>
+
+          <!-- Article 5: Team Training -->
+          <article class="card tab-content tab-content--active" data-tab-content="training" style="background-color: var(--card-elevated);">
+            <div class="blog-post">
+              <div class="blog-post__meta">
+                <span class="blog-post__category">Training</span>
+                <span>May 28, 2026</span>
+              </div>
+              <h3 class="blog-post__title">SDR Prompt Engineering: Moving Beyond the Basics of ChatGPT</h3>
+              <p class="blog-post__excerpt">How to design prompt playbooks that generate targeted pre-call MEDDIC outlines and account context logs dynamically.</p>
+              <a href="contact.html#booking" class="blog-post__link">Schedule Audit</a>
+            </div>
+          </article>
+
+          <!-- Article 6: Database Cleaning -->
+          <article class="card tab-content tab-content--active" data-tab-content="automation" style="background-color: var(--card-elevated);">
+            <div class="blog-post">
+              <div class="blog-post__meta">
+                <span class="blog-post__category">Automation</span>
+                <span>May 20, 2026</span>
+              </div>
+              <h3 class="blog-post__title">Automated List Cleansing: Securing Outbound Deliverability</h3>
+              <p class="blog-post__excerpt">How we validate outbound contact data before CRM push, dropping email bounce rates to less than 1.5%.</p>
+              <a href="contact.html#booking" class="blog-post__link">Schedule Audit</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- BLOG ARCHIVE END -->
+
+  </main>
+
+  <!-- FOOTER START -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="bishop-logo" aria-label="Bishop AI Homepage">
+          <div class="bishop-logo__icon" aria-hidden="true"></div>
+          <span>Bishop</span>AI
+        </a>
+        
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="services.html" class="footer__link">Services</a></li>
+          <li><a href="about.html" class="footer__link">About</a></li>
+          <li><a href="cases.html" class="footer__link">Case Studies</a></li>
+          <li><a href="blog.html" class="footer__link">Blog</a></li>
+          <li><a href="partners.html" class="footer__link">Partners</a></li>
+          <li><a href="faq.html" class="footer__link">FAQ</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2026 Bishop AI. All rights reserved. Founded by Richmond Taylor. Prompt Anything is unaffiliated.</p>
+        <div class="footer__legal-links">
+          <a href="legal.html" class="footer__legal-link">Privacy Policy</a>
+          <a href="legal.html" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- FOOTER END -->
+
+  <!-- JavaScript Interaction -->
+  <script src="js/main.js"></script>
+</body>
+</html>

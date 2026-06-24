@@ -1,0 +1,60 @@
+{
+  "session_code": "BKB-CC01",
+  "timestamp": "2026-06-22T16:28:56Z",
+  "brand": "Coca-Cola",
+  "current_step": "completed",
+  "visual_analysis": {
+    "colors": ["#F40009", "#FFFFFF", "#1A1A1A", "#C00005", "#FFF8F0", "#8C8C8C"],
+    "typography": "Heritage Spencerian script for identity; editorial serif + clean sans-serif for modern applications",
+    "mood": ["Classic", "Joyful", "Timeless", "Refreshing", "Universal"],
+    "patterns": "Contour bottle silhouette, dynamic ribbon wave, bold red fields with white negative space"
+  },
+  "approved_elements": {
+    "logo_direction": {
+      "type": "Wordmark",
+      "description": "Iconic Spencerian cursive script wordmark, paired with the contour bottle as a standalone icon mark. Rendered white-on-red as the primary lockup.",
+      "motifs": ["Contour bottle silhouette", "Dynamic ribbon wave", "Script flourish"]
+    },
+    "fonts": {
+      "primary": "Playfair Display",
+      "secondary": "Inter",
+      "rationale": "Playfair Display's editorial serif echoes the heritage script energy for headlines. Inter provides maximum legibility for body copy in a clean, modern pairing."
+    },
+    "color_palette": [
+      { "name": "Coca-Cola Red",   "hex": "#F40009", "role": "Primary" },
+      { "name": "Deep Crimson",    "hex": "#C00005", "role": "Primary Dark" },
+      { "name": "Pure White",      "hex": "#FFFFFF", "role": "Background / Reverse" },
+      { "name": "Classic Black",   "hex": "#1A1A1A", "role": "Text" },
+      { "name": "Warm Cream",      "hex": "#FFF8F0", "role": "Surface / Background Tint" },
+      { "name": "Stone Grey",      "hex": "#8C8C8C", "role": "Secondary Text / UI" },
+      { "name": "Midnight",        "hex": "#0D0D0D", "role": "Deep Contrast / Footer" }
+    ],
+    "brand_vibe": {
+      "adjectives": ["Classic", "Joyful", "Timeless", "Refreshing", "Universal"],
+      "statement": "Coca-Cola is the universal language of happiness — a single sip that collapses generations, borders, and moments into one shared feeling."
+    },
+    "tone_of_voice": {
+      "adjectives": ["Warm", "Inclusive", "Celebratory", "Optimistic", "Human"],
+      "example": "\"Whatever the moment — big, small, loud, or quiet — there's always a reason to open happiness.\""
+    },
+    "voice_characteristics": {
+      "sentence_length": "Short and punchy for impact; occasionally expands into warm, flowing sentences for storytelling",
+      "formality": "Casual-friendly — never corporate, always human",
+      "humor": "Light, warm, never edgy or divisive",
+      "jargon": "Plain, universal language — speaks to everyone everywhere"
+    },
+    "brand_guidelines": {
+      "logo": "Always maintain clear space equal to the cap height of the 'C' on all sides. Use on Coca-Cola Red or Pure White backgrounds only. Never stretch, recolor, or add effects.",
+      "typography": "Playfair Display Bold/Italic for hero headlines. Inter Regular for body, Inter SemiBold for UI labels. Minimum body size 14px.",
+      "colors": "Coca-Cola Red is the primary action and identity color. White is the primary reverse. Deep Crimson for hover/active states. Warm Cream for page surfaces. Never use red text on red backgrounds.",
+      "imagery": "Authentic, candid moments of joy and togetherness. Real people, real places. Avoid staged or overly polished stock imagery. Always bright, high contrast, optimistic."
+    },
+    "core_values": [
+      { "phrase": "Refresh the World",    "explanation": "Every product, experience, and interaction should leave people feeling better than before." },
+      { "phrase": "Create Real Magic",    "explanation": "Inspire moments of genuine optimism and happiness — not manufactured, not forced, always real." },
+      { "phrase": "Stay Radically Human", "explanation": "Speak plainly, act warmly, and never lose sight of the people behind every sip." },
+      { "phrase": "Belong Everywhere",    "explanation": "Coca-Cola transcends culture, language, and generation — inclusion is not a stance, it is our nature." }
+    ],
+    "brand_introduction": "Coca-Cola is more than a beverage — it is a feeling encoded into culture. Since 1886, a single red can has carried the weight of celebrations, quiet afternoons, first dates, and stadium roars, becoming the most recognized symbol of shared joy on earth. The brand does not shout its values; it lives them — in the warmth of its red, the familiarity of its script, and the universal truth that happiness is best when shared. Coca-Cola speaks without barriers: to the child buying their first bottle, to the grandparent who has savored every decade, to everyone in between. It is refreshment, yes — but more profoundly, it is connection. That is the promise Coca-Cola has made for over a century, and the promise it renews with every sip."
+  }
+}
